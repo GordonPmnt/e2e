@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: PostEntityInfo {
+    _entityId: [32m'12670340-be09-4c6c-9d0e-a5677a61b23e'[39m,
+    _entityType: [32m'POST'[39m,
+    _entityContent: [32m'Soft payment Sleek 1654862336685'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'8869e3c1-6894-493d-b95d-4694558d56df'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'SQL navigate Ports calculating indigo 1654862338517'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  attachment: [90mundefined[39m
+}

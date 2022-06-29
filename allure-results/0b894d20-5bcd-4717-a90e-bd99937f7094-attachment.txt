@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: PostEntityInfo {
+    _entityId: [32m'593f9ec5-1a6a-4b9f-a1a0-e156e7c5ca82'[39m,
+    _entityType: [32m'POST'[39m,
+    _entityContent: [32m'Account Cheese blue 1654682455897'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'05785a5b-3e03-494a-b25f-334820bcdd0c'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'connect Village Generic index magenta 1654682457590'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  attachment: [90mundefined[39m
+}

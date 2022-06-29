@@ -1,0 +1,10 @@
+query ModerationJobByEntityId($entityId: String!) {
+  moderationJobByEntityId(entityId: $entityId) {
+    moderationStatus
+    reportInfo {
+      aiReports {
+        reportReason
+      }
+    }
+  }
+}

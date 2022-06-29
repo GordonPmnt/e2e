@@ -1,0 +1,12 @@
+ModerationState {
+  _reportedEntityType: [32m'POST'[39m,
+  _reportedReason: [32m'SELF_HARM'[39m,
+  mainContent: PostEntityInfo {
+    _entityId: [32m'5499de2d-701c-49a2-940b-9ffe0a7e9063'[39m,
+    _entityType: [32m'POST'[39m,
+    _entityContent: [32m'bandwidth tertiary Buckinghamshire 1654682458400'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: [90mundefined[39m,
+  attachment: [90mundefined[39m
+}

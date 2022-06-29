@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: PollEntityInfo {
+    _entityId: [32m'f43e6d5b-0f09-4ff2-a8b8-72be126c04e8'[39m,
+    _entityType: [32m'POLL'[39m,
+    _entityContent: [32m'Gorgeous Small'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'c14c6da1-cb7c-4532-a737-4db88e2c6b3a'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'Cotton salmon Synchronised Functionality Tasty 1654863219058'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  attachment: [90mundefined[39m
+}

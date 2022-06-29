@@ -1,0 +1,12 @@
+ModerationState {
+  _reportedEntityType: [32m'POST'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: PostEntityInfo {
+    _entityId: [32m'290b7676-5c20-4a6e-b80c-d61cee318483'[39m,
+    _entityType: [32m'POST'[39m,
+    _entityContent: [32m'Tuna Account Belize 1654768953875'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: [90mundefined[39m,
+  attachment: [90mundefined[39m
+}

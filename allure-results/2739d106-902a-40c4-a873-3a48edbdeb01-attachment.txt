@@ -1,0 +1,12 @@
+ModerationState {
+  _reportedEntityType: [32m'POLL'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: PollEntityInfo {
+    _entityId: [32m'aee7e7f3-670f-4a88-bb66-d25a4876f331'[39m,
+    _entityType: [32m'POLL'[39m,
+    _entityContent: [32m'overriding FTP'[39m,
+    _author: [32m'MOD_ADMIN'[39m
+  },
+  comment: [90mundefined[39m,
+  attachment: [90mundefined[39m
+}

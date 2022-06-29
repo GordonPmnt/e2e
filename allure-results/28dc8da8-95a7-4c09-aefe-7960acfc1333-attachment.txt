@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: PollEntityInfo {
+    _entityId: [32m'd1939998-8208-4008-9b98-776a7fed078a'[39m,
+    _entityType: [32m'POLL'[39m,
+    _entityContent: [32m'Concrete Automotive'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'7644027c-5719-4908-bf6a-c7db9ea84b6d'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'engineer Handmade Licensed Salad Cambridgeshire 1654682457594'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  attachment: [90mundefined[39m
+}

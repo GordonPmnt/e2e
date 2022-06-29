@@ -1,0 +1,37 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "reviewers": ["indradeepchowdhury", "MichaelDeBoeyAaqua", "vikgagaleski"],
+  "branchConcurrentLimit": 60,
+  "prConcurrentLimit": 20,
+  "enabledManagers": ["npm"],
+  "rebaseWhen": "conflicted",
+  "stabilityDays": 7,
+  "prCreation": "immediate",
+  "packageRules": [
+    {
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "automerge": true
+    },
+    {
+      "matchPackagePatterns": ["eslint", "prettier"],
+      "postUpgradeTasks": {
+        "commands": ["npm install", "npm run lint:fix"],
+        "fileFilters": ["package-lock.json", "**/*.tsx?", "**/*.js"],
+        "executionMode": "update"
+      }
+    },
+    {
+      "matchPackageNames": ["aws-amplify"],
+      "matchPackagePatterns": ["^@aws-amplify/"],
+      "groupName": "AWS packages"
+    },
+    {
+      "matchPackagePatterns": ["^@typescript-eslint/"],
+      "groupName": "ESLint TS packages"
+    },
+    {
+      "matchPackageNames": ["babel-jest", "jest"],
+      "groupName": "Jest packages"
+    }
+  ]
+}

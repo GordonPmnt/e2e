@@ -1,0 +1,43 @@
+query ModerationJobs(
+  $filter: ModerationJobsFilter
+  $after: String
+  $first: Int
+) {
+  moderationJobs(filter: $filter, after: $after, first: $first) {
+    edges {
+      node {
+        entity {
+          __typename
+          ... on PollModerationInfo {
+            poll {
+              id
+            }
+            visibility
+          }
+          ... on PostModerationInfo {
+            post {
+              id
+            }
+            visibility
+          }
+          ... on EventModerationInfo {
+            event {
+              id
+            }
+            visibility
+          }
+          ... on CommentModerationInfo {
+            comment {
+              id
+            }
+            visibility
+          }
+        }
+      }
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}

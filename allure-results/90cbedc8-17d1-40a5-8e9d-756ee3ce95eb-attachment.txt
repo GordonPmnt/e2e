@@ -1,0 +1,12 @@
+ModerationState {
+  _reportedEntityType: [90mundefined[39m,
+  _reportedReason: [32m''[39m,
+  mainContent: EventEntityInfo {
+    _entityId: [32m'cfa4cbe9-d456-483d-811b-f78ef5844ac5'[39m,
+    _entityType: [32m'EVENT'[39m,
+    _entityContent: [32m'You are retarded'[39m,
+    _author: [32m'MOD_ADMIN'[39m
+  },
+  comment: [90mundefined[39m,
+  attachment: [90mundefined[39m
+}

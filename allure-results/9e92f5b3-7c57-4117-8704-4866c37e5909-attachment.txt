@@ -1,0 +1,12 @@
+ModerationState {
+  _reportedEntityType: [90mundefined[39m,
+  _reportedReason: [32m''[39m,
+  mainContent: PollEntityInfo {
+    _entityId: [32m'637161cf-956d-4e39-a36c-467e1c0ee27d'[39m,
+    _entityType: [32m'POLL'[39m,
+    _entityContent: [32m'You are retarded'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: [90mundefined[39m,
+  attachment: [90mundefined[39m
+}

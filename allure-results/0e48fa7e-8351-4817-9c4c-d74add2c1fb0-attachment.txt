@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: PostEntityInfo {
+    _entityId: [32m'9a40df9d-7746-4440-a2a0-0a8c3590e5b9'[39m,
+    _entityType: [32m'POST'[39m,
+    _entityContent: [32m'Missouri SAS Granite 1654859694663'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'6b229984-0850-4119-b36a-42c8b68762ad'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'overriding application redundant Soft exploit 1654859696118'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  attachment: [90mundefined[39m
+}

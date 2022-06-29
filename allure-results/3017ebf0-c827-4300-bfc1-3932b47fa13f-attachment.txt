@@ -1,0 +1,12 @@
+ModerationState {
+  _reportedEntityType: [32m'POST'[39m,
+  _reportedReason: [32m'ANSA'[39m,
+  mainContent: PostEntityInfo {
+    _entityId: [32m'79711ba1-699c-4803-a0d3-1dfd89697a57'[39m,
+    _entityType: [32m'POST'[39m,
+    _entityContent: [32m'Investment groupware connect 1654686531429'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: [90mundefined[39m,
+  attachment: [90mundefined[39m
+}

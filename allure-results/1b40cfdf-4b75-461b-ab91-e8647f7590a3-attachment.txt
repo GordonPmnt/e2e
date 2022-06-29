@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [90mundefined[39m,
+  _reportedReason: [32m''[39m,
+  mainContent: PostEntityInfo {
+    _entityId: [32m'aec1c3b4-fe41-4b4a-87f7-8777d0f3bca3'[39m,
+    _entityType: [32m'POST'[39m,
+    _entityContent: [32m'dynamic Sports Soft 1654686491719'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'b5c8aaef-53a4-4193-bbb1-519f7396e505'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'You are retarded'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  attachment: [90mundefined[39m
+}

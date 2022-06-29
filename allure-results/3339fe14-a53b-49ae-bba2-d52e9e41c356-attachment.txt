@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: PostEntityInfo {
+    _entityId: [32m'0d703625-1a8b-46a7-aeba-9c0206c90a62'[39m,
+    _entityType: [32m'POST'[39m,
+    _entityContent: [32m'mesh generate Branding 1654865888137'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'5abc44bc-bf24-46aa-9c05-a039d5e3ea14'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'Metal Mexico Costa deliverables Tasty 1654865889951'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  attachment: [90mundefined[39m
+}

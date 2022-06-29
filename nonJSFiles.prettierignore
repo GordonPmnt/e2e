@@ -1,0 +1,16 @@
+# Add files here to ignore them from prettier formatting
+
+allure-report
+allure-results
+build
+generated
+playwright-report
+reports
+test-results
+
+*.ts
+*.tsx
+*.js
+*.jsx
+
+src/graphql-schema/generated/*

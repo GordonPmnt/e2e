@@ -1,0 +1,36 @@
+query EventFeedQuery(
+  $fandomId: String!
+  $filter: FeedFilter!
+  $first: Int
+  $after: String
+) {
+  eventFeed(
+    fandomId: $fandomId
+    filter: $filter
+    first: $first
+    after: $after
+  ) {
+    edges {
+      node {
+        content {
+          ... on Event {
+            id
+          }
+          ... on Livestream {
+            id
+          }
+          ... on Poll {
+            id
+          }
+          ... on Post {
+            id
+          }
+        }
+      }
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}

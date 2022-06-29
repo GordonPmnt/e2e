@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: PollEntityInfo {
+    _entityId: [32m'08d59783-a679-4011-be49-8ba980a0692b'[39m,
+    _entityType: [32m'POLL'[39m,
+    _entityContent: [32m'Generic Chicken'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'2882432e-61d4-4630-9607-7608302e17eb'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'deposit USB auxiliary Computer Engineer 1654866230569'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  attachment: [90mundefined[39m
+}

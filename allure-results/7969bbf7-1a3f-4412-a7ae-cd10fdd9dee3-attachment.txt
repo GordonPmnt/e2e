@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: EventEntityInfo {
+    _entityId: [32m'cb4ebbef-285b-4a5d-8d0e-126073312de2'[39m,
+    _entityType: [32m'EVENT'[39m,
+    _entityContent: [32m'Designer Response 1654862142482'[39m,
+    _author: [32m'MOD_ADMIN'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'e4a58a6d-e969-47ee-8350-f3c8cffdfdc6'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'Assimilated Forward recontextualize Beauty Tuna 1654862144331'[39m,
+    _author: [32m'MOD_ADMIN'[39m
+  },
+  attachment: [90mundefined[39m
+}

@@ -1,0 +1,529 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "proactive-moderation;internal-moderator-looks-for-content-and-proactively-decides-to-take-an-action-on-it",
+        "keyword": "Scenario Outline",
+        "line": 3,
+        "name": "Internal moderator looks for content and proactively decides to take an action on it",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1038000000
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "a \"POST\" has been created by \"MOD_MEMBER_1\"",
+            "match": {
+              "location": "src/step-definitions/aaqua-admin/aaqua-admin-common.steps.ts:68"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2183000000
+            },
+            "embeddings": [
+              {
+                "data": "Step Start Time: Wed, 11 May 2022 12:05:28 GMT",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Step End Time: Wed, 11 May 2022 12:05:30 GMT",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 5,
+            "name": "I am logged in the \"ADMINISTRATION\" app as user \"MOD_INTERNAL_MODERATOR_1\"",
+            "match": {
+              "location": "src/step-definitions/login/login.steps.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4080000000
+            },
+            "embeddings": [
+              {
+                "data": "Step Start Time: Wed, 11 May 2022 12:05:30 GMT",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Step End Time: Wed, 11 May 2022 12:05:34 GMT",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I look for the non reported entity",
+            "match": {
+              "location": "src/step-definitions/aaqua-admin/proactive-moderation.steps.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2217000000
+            },
+            "embeddings": [
+              {
+                "data": "Step Start Time: Wed, 11 May 2022 12:05:34 GMT",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Step End Time: Wed, 11 May 2022 12:05:36 GMT",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I proactively review the job and hide it with the violationType \"CHILD\"",
+            "match": {
+              "location": "src/step-definitions/aaqua-admin/proactive-moderation.steps.ts:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2473000000
+            },
+            "embeddings": [
+              {
+                "data": "Step Start Time: Wed, 11 May 2022 12:05:36 GMT",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Step End Time: Wed, 11 May 2022 12:05:39 GMT",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "the entity is \"hidden\" for member \"MOD_MEMBER_1\" in \"community, highlight, event\" feeds",
+            "match": {
+              "location": "src/step-definitions/shared/moderation/moderation-entity-visibility-feeds.steps.ts:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 4428000000
+            },
+            "embeddings": [
+              {
+                "data": "Step Start Time: Wed, 11 May 2022 12:05:39 GMT",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Step End Time: Wed, 11 May 2022 12:05:43 GMT",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 49000000
+            },
+            "embeddings": [
+              {
+                "data": "Status: PASSED. Duration:1s",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1641000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "proactive-moderation;internal-moderator-looks-for-content-and-proactively-decides-to-take-an-action-on-it",
+        "keyword": "Scenario Outline",
+        "line": 3,
+        "name": "Internal moderator looks for content and proactively decides to take an action on it",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 743000000
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "a \"EVENT\" has been created by \"MOD_MEMBER_1\"",
+            "match": {
+              "location": "src/step-definitions/aaqua-admin/aaqua-admin-common.steps.ts:68"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1517000000
+            },
+            "embeddings": [
+              {
+                "data": "Step Start Time: Wed, 11 May 2022 12:05:45 GMT",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Step End Time: Wed, 11 May 2022 12:05:47 GMT",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 5,
+            "name": "I am logged in the \"ADMINISTRATION\" app as user \"MOD_INTERNAL_MODERATOR_1\"",
+            "match": {
+              "location": "src/step-definitions/login/login.steps.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3886000000
+            },
+            "embeddings": [
+              {
+                "data": "Step Start Time: Wed, 11 May 2022 12:05:47 GMT",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Step End Time: Wed, 11 May 2022 12:05:51 GMT",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I look for the non reported entity",
+            "match": {
+              "location": "src/step-definitions/aaqua-admin/proactive-moderation.steps.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1593000000
+            },
+            "embeddings": [
+              {
+                "data": "Step Start Time: Wed, 11 May 2022 12:05:51 GMT",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Step End Time: Wed, 11 May 2022 12:05:52 GMT",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I proactively review the job and hide it with the violationType \"CHILD\"",
+            "match": {
+              "location": "src/step-definitions/aaqua-admin/proactive-moderation.steps.ts:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2521000000
+            },
+            "embeddings": [
+              {
+                "data": "Step Start Time: Wed, 11 May 2022 12:05:52 GMT",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Step End Time: Wed, 11 May 2022 12:05:55 GMT",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "the entity is \"hidden\" for member \"MOD_MEMBER_1\" in \"community, highlight, event\" feeds",
+            "match": {
+              "location": "src/step-definitions/shared/moderation/moderation-entity-visibility-feeds.steps.ts:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5770000000
+            },
+            "embeddings": [
+              {
+                "data": "Step Start Time: Wed, 11 May 2022 12:05:55 GMT",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Step End Time: Wed, 11 May 2022 12:06:01 GMT",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 2000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 70000000
+            },
+            "embeddings": [
+              {
+                "data": "Status: PASSED. Duration:0s",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1597000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "proactive-moderation;internal-moderator-looks-for-content-and-proactively-decides-to-take-an-action-on-it",
+        "keyword": "Scenario Outline",
+        "line": 3,
+        "name": "Internal moderator looks for content and proactively decides to take an action on it",
+        "steps": [
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 370000000
+            }
+          },
+          {
+            "keyword": "Before",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "a \"POLL\" has been created by \"MOD_MEMBER_1\"",
+            "match": {
+              "location": "src/step-definitions/aaqua-admin/aaqua-admin-common.steps.ts:68"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1530000000
+            },
+            "embeddings": [
+              {
+                "data": "Step Start Time: Wed, 11 May 2022 12:06:03 GMT",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Step End Time: Wed, 11 May 2022 12:06:04 GMT",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 5,
+            "name": "I am logged in the \"ADMINISTRATION\" app as user \"MOD_INTERNAL_MODERATOR_1\"",
+            "match": {
+              "location": "src/step-definitions/login/login.steps.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3855000000
+            },
+            "embeddings": [
+              {
+                "data": "Step Start Time: Wed, 11 May 2022 12:06:04 GMT",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Step End Time: Wed, 11 May 2022 12:06:08 GMT",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 6,
+            "name": "I look for the non reported entity",
+            "match": {
+              "location": "src/step-definitions/aaqua-admin/proactive-moderation.steps.ts:9"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1667000000
+            },
+            "embeddings": [
+              {
+                "data": "Step Start Time: Wed, 11 May 2022 12:06:08 GMT",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Step End Time: Wed, 11 May 2022 12:06:10 GMT",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 7,
+            "name": "I proactively review the job and hide it with the violationType \"CHILD\"",
+            "match": {
+              "location": "src/step-definitions/aaqua-admin/proactive-moderation.steps.ts:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2316000000
+            },
+            "embeddings": [
+              {
+                "data": "Step Start Time: Wed, 11 May 2022 12:06:10 GMT",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Step End Time: Wed, 11 May 2022 12:06:12 GMT",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "the entity is \"hidden\" for member \"MOD_MEMBER_1\" in \"community, highlight, event\" feeds",
+            "match": {
+              "location": "src/step-definitions/shared/moderation/moderation-entity-visibility-feeds.steps.ts:15"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3804000000
+            },
+            "embeddings": [
+              {
+                "data": "Step Start Time: Wed, 11 May 2022 12:06:12 GMT",
+                "mime_type": "text/plain"
+              },
+              {
+                "data": "Step End Time: Wed, 11 May 2022 12:06:16 GMT",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 77000000
+            },
+            "embeddings": [
+              {
+                "data": "Status: PASSED. Duration:0s",
+                "mime_type": "text/plain"
+              }
+            ]
+          },
+          {
+            "keyword": "After",
+            "hidden": true,
+            "result": {
+              "status": "passed",
+              "duration": 1526000000
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "proactive-moderation",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "Proactive moderation",
+    "tags": [],
+    "uri": "src/features/aaqua-admin/proactive-moderation.feature"
+  }
+]

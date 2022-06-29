@@ -1,0 +1,17 @@
+mutation ChangeEntityModerationStatus(
+  $entityId: String!
+  $visibility: EntityVisibility
+  $violationType: String
+  $internalNote: String
+) {
+  changeModerationStatus(
+    input: {
+      entityId: $entityId
+      visibility: $visibility
+      violationType: $violationType
+      internalNote: $internalNote
+    }
+  ) {
+    moderationStatus
+  }
+}

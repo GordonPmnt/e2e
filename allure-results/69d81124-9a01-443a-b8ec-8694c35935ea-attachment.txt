@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: PollEntityInfo {
+    _entityId: [32m'007ae3b3-11fb-4e9d-931d-12152fa9ce8e'[39m,
+    _entityType: [32m'POLL'[39m,
+    _entityContent: [32m'Money motivating'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'd232f770-cfb3-4f5b-bb1c-aafba6c3eb39'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'payment input program online connect 1654862278758'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  attachment: [90mundefined[39m
+}

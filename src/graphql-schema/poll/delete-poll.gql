@@ -1,0 +1,5 @@
+mutation DeletePoll($input: DeletePollInput!) {
+  deletePoll(input: $input) {
+    pollId
+  }
+}

@@ -1,0 +1,6 @@
+query FindEventById($eventId: String!) {
+  event(id: $eventId) {
+    id
+    status
+  }
+}

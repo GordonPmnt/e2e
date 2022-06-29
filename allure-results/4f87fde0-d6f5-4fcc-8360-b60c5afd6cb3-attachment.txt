@@ -1,0 +1,12 @@
+ModerationState {
+  _reportedEntityType: [32m'POST'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: PostEntityInfo {
+    _entityId: [32m'2cbf5dcf-c253-4dd2-ad8e-830694e4feda'[39m,
+    _entityType: [32m'POST'[39m,
+    _entityContent: [32m'silver invoice matrix 1654682438019'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: [90mundefined[39m,
+  attachment: [90mundefined[39m
+}

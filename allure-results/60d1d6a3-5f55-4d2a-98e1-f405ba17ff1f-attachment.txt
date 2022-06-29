@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: PollEntityInfo {
+    _entityId: [32m'c7213238-c1f0-418e-bd56-3addcf9f58ca'[39m,
+    _entityType: [32m'POLL'[39m,
+    _entityContent: [32m'Shoes index'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'5896b8fc-d6f9-4c13-b209-3dc0065dea9d'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'Loaf invoice models Senior Fuerte 1654865958954'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  attachment: [90mundefined[39m
+}

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+    <testsuite name="double-moderation-fail-for-an-entity;internal-moderator-sees-alert-message-for-double-moderation" tests="8" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="src/features/aaqua-admin/double-moderation-fail.feature">
+            </property>
+        </properties>
+        <testcase name="Given a &quot;POST&quot; has been created by &quot;MEMBER_1&quot;" classname="double-moderation-fail-for-an-entity;internal-moderator-sees-alert-message-for-double-moderation" time="1.802">
+        </testcase>
+        <testcase name="And the created &quot;POST&quot; has been reported to &quot;AAQUA&quot; with reason &quot;HARASSMENT_HATE&quot; by member &quot;MEMBER_2&quot;" classname="double-moderation-fail-for-an-entity;internal-moderator-sees-alert-message-for-double-moderation" time="6.351">
+        </testcase>
+        <testcase name="And I am logged in as &quot;INTERNAL_MODERATOR_1&quot;" classname="double-moderation-fail-for-an-entity;internal-moderator-sees-alert-message-for-double-moderation" time="3.092">
+        </testcase>
+        <testcase name="And I review the job and keep it visible" classname="double-moderation-fail-for-an-entity;internal-moderator-sees-alert-message-for-double-moderation" time="1.407">
+        </testcase>
+        <testcase name="And I log out" classname="double-moderation-fail-for-an-entity;internal-moderator-sees-alert-message-for-double-moderation" time="0.129">
+        </testcase>
+        <testcase name="Given I am logged in as &quot;INTERNAL_MODERATOR_2&quot;" classname="double-moderation-fail-for-an-entity;internal-moderator-sees-alert-message-for-double-moderation" time="2.219">
+        </testcase>
+        <testcase name="When I navigate to the reported entity detail" classname="double-moderation-fail-for-an-entity;internal-moderator-sees-alert-message-for-double-moderation" time="0.617">
+        </testcase>
+        <testcase name="Then I see an alert message" classname="double-moderation-fail-for-an-entity;internal-moderator-sees-alert-message-for-double-moderation" time="0.338">
+        </testcase>
+    </testsuite>
+    <testsuite name="login-test;moderator-can-login-and-see-the-list-of-jobs" tests="3" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="src/features/aaqua-admin/login.feature">
+            </property>
+        </properties>
+        <testcase name="Given I go to the home page" classname="login-test;moderator-can-login-and-see-the-list-of-jobs" time="1.196">
+        </testcase>
+        <testcase name="When I am logged in as &quot;INTERNAL_MODERATOR_1&quot;" classname="login-test;moderator-can-login-and-see-the-list-of-jobs" time="2.602">
+        </testcase>
+        <testcase name="Then user can view the list of Jobs" classname="login-test;moderator-can-login-and-see-the-list-of-jobs" time="0.005">
+        </testcase>
+    </testsuite>
+    <testsuite name="login-test;moderator-can-login-and-see-the-list-of-jobs" tests="3" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="src/features/aaqua-admin/login.feature">
+            </property>
+        </properties>
+        <testcase name="Given I go to the home page" classname="login-test;moderator-can-login-and-see-the-list-of-jobs" time="1.286">
+        </testcase>
+        <testcase name="When I am logged in as &quot;EXTERNAL_MODERATOR_1&quot;" classname="login-test;moderator-can-login-and-see-the-list-of-jobs" time="2.531">
+        </testcase>
+        <testcase name="Then user can view the list of Jobs" classname="login-test;moderator-can-login-and-see-the-list-of-jobs" time="0.004">
+        </testcase>
+    </testsuite>
+    <testsuite name="login-test;regular-user-cannot-login" tests="3" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="src/features/aaqua-admin/login.feature">
+            </property>
+        </properties>
+        <testcase name="Given I go to the home page" classname="login-test;regular-user-cannot-login" time="1.148">
+        </testcase>
+        <testcase name="When I am logged in as &quot;MEMBER_1&quot;" classname="login-test;regular-user-cannot-login" time="2.517">
+        </testcase>
+        <testcase name="Then user cannot view the list of Jobs" classname="login-test;regular-user-cannot-login" time="0.199">
+        </testcase>
+    </testsuite>
+    <testsuite name="verify-reported-reasons-for-a-reported-entity;internal-moderator-verifies-the-reported-reasons-of-a-reported-entity" tests="6" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="src/features/aaqua-admin/report-and-verify-reported-entity.feature">
+            </property>
+        </properties>
+        <testcase name="Given a &quot;POST&quot; has been created by &quot;MEMBER_1&quot;" classname="verify-reported-reasons-for-a-reported-entity;internal-moderator-verifies-the-reported-reasons-of-a-reported-entity" time="1.488">
+        </testcase>
+        <testcase name="And the created &quot;POST&quot; has been reported to &quot;AAQUA&quot; with reason &quot;HARASSMENT_HATE&quot; by member &quot;MEMBER_2&quot;" classname="verify-reported-reasons-for-a-reported-entity;internal-moderator-verifies-the-reported-reasons-of-a-reported-entity" time="6.076">
+        </testcase>
+        <testcase name="And I am logged in as &quot;INTERNAL_MODERATOR_1&quot;" classname="verify-reported-reasons-for-a-reported-entity;internal-moderator-verifies-the-reported-reasons-of-a-reported-entity" time="3.328">
+        </testcase>
+        <testcase name="When I navigate to the &quot;jobs&quot; page" classname="verify-reported-reasons-for-a-reported-entity;internal-moderator-verifies-the-reported-reasons-of-a-reported-entity" time="0.037">
+        </testcase>
+        <testcase name="Then I should see the reported entity with &quot;Harassment/Hate&quot;" classname="verify-reported-reasons-for-a-reported-entity;internal-moderator-verifies-the-reported-reasons-of-a-reported-entity" time="0.812">
+        </testcase>
+        <testcase name="And I review the job and keep it visible" classname="verify-reported-reasons-for-a-reported-entity;internal-moderator-verifies-the-reported-reasons-of-a-reported-entity" time="1.359">
+        </testcase>
+    </testsuite>
+    <testsuite name="verify-reported-reasons-for-a-reported-entity;internal-moderator-verifies-the-reported-reasons-of-a-reported-entity" tests="6" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="src/features/aaqua-admin/report-and-verify-reported-entity.feature">
+            </property>
+        </properties>
+        <testcase name="Given a &quot;POLL&quot; has been created by &quot;MEMBER_1&quot;" classname="verify-reported-reasons-for-a-reported-entity;internal-moderator-verifies-the-reported-reasons-of-a-reported-entity" time="1.082">
+        </testcase>
+        <testcase name="And the created &quot;POLL&quot; has been reported to &quot;AAQUA&quot; with reason &quot;HARASSMENT_HATE&quot; by member &quot;MEMBER_2&quot;" classname="verify-reported-reasons-for-a-reported-entity;internal-moderator-verifies-the-reported-reasons-of-a-reported-entity" time="5.914">
+        </testcase>
+        <testcase name="And I am logged in as &quot;INTERNAL_MODERATOR_1&quot;" classname="verify-reported-reasons-for-a-reported-entity;internal-moderator-verifies-the-reported-reasons-of-a-reported-entity" time="3.113">
+        </testcase>
+        <testcase name="When I navigate to the &quot;jobs&quot; page" classname="verify-reported-reasons-for-a-reported-entity;internal-moderator-verifies-the-reported-reasons-of-a-reported-entity" time="0.047">
+        </testcase>
+        <testcase name="Then I should see the reported entity with &quot;Harassment/Hate&quot;" classname="verify-reported-reasons-for-a-reported-entity;internal-moderator-verifies-the-reported-reasons-of-a-reported-entity" time="16.248">
+        </testcase>
+        <testcase name="And I review the job and keep it visible" classname="verify-reported-reasons-for-a-reported-entity;internal-moderator-verifies-the-reported-reasons-of-a-reported-entity" time="1.546">
+        </testcase>
+    </testsuite>
+    <testsuite name="verify-reported-reasons-for-a-reported-entity;internal-moderator-verifies-the-reported-reasons-of-a-reported-entity" tests="6" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="src/features/aaqua-admin/report-and-verify-reported-entity.feature">
+            </property>
+        </properties>
+        <testcase name="Given a &quot;EVENT&quot; has been created by &quot;MEMBER_1&quot;" classname="verify-reported-reasons-for-a-reported-entity;internal-moderator-verifies-the-reported-reasons-of-a-reported-entity" time="1.054">
+        </testcase>
+        <testcase name="And the created &quot;EVENT&quot; has been reported to &quot;AAQUA&quot; with reason &quot;HARASSMENT_HATE&quot; by member &quot;MEMBER_2&quot;" classname="verify-reported-reasons-for-a-reported-entity;internal-moderator-verifies-the-reported-reasons-of-a-reported-entity" time="6.008">
+        </testcase>
+        <testcase name="And I am logged in as &quot;INTERNAL_MODERATOR_1&quot;" classname="verify-reported-reasons-for-a-reported-entity;internal-moderator-verifies-the-reported-reasons-of-a-reported-entity" time="3.157">
+        </testcase>
+        <testcase name="When I navigate to the &quot;jobs&quot; page" classname="verify-reported-reasons-for-a-reported-entity;internal-moderator-verifies-the-reported-reasons-of-a-reported-entity" time="0.052">
+        </testcase>
+        <testcase name="Then I should see the reported entity with &quot;Harassment/Hate&quot;" classname="verify-reported-reasons-for-a-reported-entity;internal-moderator-verifies-the-reported-reasons-of-a-reported-entity" time="0.664">
+        </testcase>
+        <testcase name="And I review the job and keep it visible" classname="verify-reported-reasons-for-a-reported-entity;internal-moderator-verifies-the-reported-reasons-of-a-reported-entity" time="1.323">
+        </testcase>
+    </testsuite>
+    <testsuite name="verify-reported-reasons-for-a-reported-entity;internal-moderator-verifies-the-reported-reason-of-a-reported-comment" tests="7" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="src/features/aaqua-admin/report-and-verify-reported-entity.feature">
+            </property>
+        </properties>
+        <testcase name="Given a &quot;POST&quot; has been created by &quot;MEMBER_1&quot;" classname="verify-reported-reasons-for-a-reported-entity;internal-moderator-verifies-the-reported-reason-of-a-reported-comment" time="1.271">
+        </testcase>
+        <testcase name="And a &quot;COMMENT&quot; has been created by &quot;MEMBER_1&quot;" classname="verify-reported-reasons-for-a-reported-entity;internal-moderator-verifies-the-reported-reason-of-a-reported-comment" time="1.246">
+        </testcase>
+        <testcase name="And the created &quot;COMMENT&quot; has been reported to &quot;AAQUA&quot; with reason &quot;HARASSMENT_HATE&quot; by member &quot;MEMBER_2&quot;" classname="verify-reported-reasons-for-a-reported-entity;internal-moderator-verifies-the-reported-reason-of-a-reported-comment" time="5.929">
+        </testcase>
+        <testcase name="And I am logged in as &quot;INTERNAL_MODERATOR_1&quot;" classname="verify-reported-reasons-for-a-reported-entity;internal-moderator-verifies-the-reported-reason-of-a-reported-comment" time="3.122">
+        </testcase>
+        <testcase name="When I navigate to the &quot;jobs&quot; page" classname="verify-reported-reasons-for-a-reported-entity;internal-moderator-verifies-the-reported-reason-of-a-reported-comment" time="0.059">
+        </testcase>
+        <testcase name="Then I should see the reported entity with &quot;Harassment/Hate&quot;" classname="verify-reported-reasons-for-a-reported-entity;internal-moderator-verifies-the-reported-reason-of-a-reported-comment" time="12.368">
+        </testcase>
+        <testcase name="And I review the job and keep it visible" classname="verify-reported-reasons-for-a-reported-entity;internal-moderator-verifies-the-reported-reason-of-a-reported-comment" time="1.931">
+        </testcase>
+    </testsuite>
+    <testsuite name="reviewed-job-goes-to-history;internal-moderator-sees-reviewd-job-in-history-page" tests="6" failures="0" skipped="0">
+        <properties>
+            <property name="URI" value="src/features/aaqua-admin/reviewed-job-goes-to-history.feature">
+            </property>
+        </properties>
+        <testcase name="Given a &quot;POST&quot; has been created by &quot;MEMBER_1&quot;" classname="reviewed-job-goes-to-history;internal-moderator-sees-reviewd-job-in-history-page" time="1.269">
+        </testcase>
+        <testcase name="And the created &quot;POST&quot; has been reported to &quot;AAQUA&quot; with reason &quot;HARASSMENT_HATE&quot; by member &quot;MEMBER_2&quot;" classname="reviewed-job-goes-to-history;internal-moderator-sees-reviewd-job-in-history-page" time="6.143">
+        </testcase>
+        <testcase name="And I am logged in as &quot;INTERNAL_MODERATOR_1&quot;" classname="reviewed-job-goes-to-history;internal-moderator-sees-reviewd-job-in-history-page" time="3.312">
+        </testcase>
+        <testcase name="And I review the job and hide it with the violationType &quot;CHILD&quot;" classname="reviewed-job-goes-to-history;internal-moderator-sees-reviewd-job-in-history-page" time="1.415">
+        </testcase>
+        <testcase name="When I navigate to the &quot;history&quot; page" classname="reviewed-job-goes-to-history;internal-moderator-sees-reviewd-job-in-history-page" time="0.045">
+        </testcase>
+        <testcase name="Then I see the reviewed entity with &quot;Child Safety&quot;" classname="reviewed-job-goes-to-history;internal-moderator-sees-reviewd-job-in-history-page" time="0.864">
+        </testcase>
+    </testsuite>
+</testsuites>

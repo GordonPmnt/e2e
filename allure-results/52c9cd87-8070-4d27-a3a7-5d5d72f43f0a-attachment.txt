@@ -1,0 +1,12 @@
+ModerationState {
+  _reportedEntityType: [32m'POST'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: PostEntityInfo {
+    _entityId: [32m'37a5b7b0-6693-4f06-ae8e-792f01b105f5'[39m,
+    _entityType: [32m'POST'[39m,
+    _entityContent: [32m'Chair Lodge Synergistic 1654682483776'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: [90mundefined[39m,
+  attachment: [90mundefined[39m
+}

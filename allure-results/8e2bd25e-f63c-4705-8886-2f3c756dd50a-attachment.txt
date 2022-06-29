@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: EventEntityInfo {
+    _entityId: [32m'5dad7e0e-10df-4ae1-9806-c8f5fe51aef2'[39m,
+    _entityType: [32m'EVENT'[39m,
+    _entityContent: [32m'Carolina 1080p 1654864476983'[39m,
+    _author: [32m'MOD_ADMIN'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'492984ee-dfcf-46bd-b9a8-a67b5d8a7798'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'Locks French schemas Planner synthesizing 1654864478926'[39m,
+    _author: [32m'MOD_ADMIN'[39m
+  },
+  attachment: [90mundefined[39m
+}

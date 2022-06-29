@@ -1,0 +1,36 @@
+query communityFeedQuery(
+  $fandomId: String!
+  $filter: FeedFilter!
+  $first: Int
+  $after: String
+) {
+  communityFeed(
+    fandomId: $fandomId
+    filter: $filter
+    first: $first
+    after: $after
+  ) {
+    edges {
+      node {
+        content {
+          ... on Event {
+            id
+          }
+          ... on Livestream {
+            id
+          }
+          ... on Post {
+            id
+          }
+          ... on Poll {
+            id
+          }
+        }
+      }
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}

@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: EventEntityInfo {
+    _entityId: [32m'cfe67258-2ef8-4877-95f6-d5acbc7a88b3'[39m,
+    _entityType: [32m'EVENT'[39m,
+    _entityContent: [32m'yellow Via 1654864887954'[39m,
+    _author: [32m'MOD_ADMIN'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'ce3968bd-0d9f-4aeb-b92c-5cc0f8641c84'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'Car Gold Berkshire up Metal 1654864889806'[39m,
+    _author: [32m'MOD_ADMIN'[39m
+  },
+  attachment: [90mundefined[39m
+}

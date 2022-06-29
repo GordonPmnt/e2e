@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: PostEntityInfo {
+    _entityId: [32m'ebce67d8-528e-47fe-90a7-de3ec2835016'[39m,
+    _entityType: [32m'POST'[39m,
+    _entityContent: [32m'withdrawal Books withdrawal 1654858533213'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'8c39fee6-a7fd-43c0-8457-8cb49c8444ad'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'Officer Rupee silver Avon morph 1654858534854'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  attachment: [90mundefined[39m
+}

@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [90mundefined[39m,
+  _reportedReason: [32m''[39m,
+  mainContent: PostEntityInfo {
+    _entityId: [32m'41663f2c-811f-4c4c-a450-acf42e3d932f'[39m,
+    _entityType: [32m'POST'[39m,
+    _entityContent: [32m'Somalia Parkway CFA 1654682111333'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'4edef406-e567-40fb-974f-b0922dfa456c'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'You are retarded'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  attachment: [90mundefined[39m
+}

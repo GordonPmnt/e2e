@@ -1,0 +1,6 @@
+query FindCommentById($commentId: String!) {
+  comment(commentId: $commentId) {
+    id
+    status
+  }
+}

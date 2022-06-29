@@ -1,0 +1,12 @@
+ModerationState {
+  _reportedEntityType: [32m'POST'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: PostEntityInfo {
+    _entityId: [32m'0a7fd04d-23bf-410d-8e3d-0aa08b8a01c5'[39m,
+    _entityType: [32m'POST'[39m,
+    _entityContent: [32m'Michigan pixel channels 1654769015337'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: [90mundefined[39m,
+  attachment: [90mundefined[39m
+}

@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: PollEntityInfo {
+    _entityId: [32m'e37c34d6-183a-4195-99bf-a280bdea8827'[39m,
+    _entityType: [32m'POLL'[39m,
+    _entityContent: [32m'Chief Plastic'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'ade049bc-813a-4abf-8614-86076e67c997'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'infrastructures Rubber compressing Branding Interactions 1654682138610'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  attachment: [90mundefined[39m
+}

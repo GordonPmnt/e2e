@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: PollEntityInfo {
+    _entityId: [32m'1568ba2e-78bb-4d2d-ba64-aff6911b0b4c'[39m,
+    _entityType: [32m'POLL'[39m,
+    _entityContent: [32m'orchid FTP'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'afb3238f-addf-4a2c-9b50-3aeb837e48d9'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'implement salmon Japan Dollar deposit 1654862074922'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  attachment: [90mundefined[39m
+}

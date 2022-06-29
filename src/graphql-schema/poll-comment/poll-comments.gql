@@ -1,0 +1,14 @@
+query PollComments($pollId: String!) {
+  poll(id: $pollId) {
+    # number of comments we want to load
+    # set to 50 in order to be sure that the created one is in the list
+    comments(first: 50) {
+      edges {
+        node {
+          id
+          status
+        }
+      }
+    }
+  }
+}

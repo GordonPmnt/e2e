@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: PostEntityInfo {
+    _entityId: [32m'705bf8cb-2122-413a-a8d8-27ed0c7749c5'[39m,
+    _entityType: [32m'POST'[39m,
+    _entityContent: [32m'Skyway Account indigo 1654862207514'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'546645a1-0fd2-4b9e-b2b4-33ca97e3c61f'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'emulation monetize discrete online benchmark 1654862209442'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  attachment: [90mundefined[39m
+}

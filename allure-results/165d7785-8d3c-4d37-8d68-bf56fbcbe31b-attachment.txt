@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [90mundefined[39m,
+  _reportedReason: [32m''[39m,
+  mainContent: PostEntityInfo {
+    _entityId: [32m'133b9aa6-1c00-40aa-ac27-bd2c620c101b'[39m,
+    _entityType: [32m'POST'[39m,
+    _entityContent: [32m'PNG Incredible Denar 1654686501791'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'69faac5f-cce4-4b1c-966b-3f826e1e09bb'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'Test'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  attachment: [90mundefined[39m
+}

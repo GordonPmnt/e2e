@@ -1,0 +1,43 @@
+query profileFeedQuery(
+  $filter: FeedFilter!
+  $userId: String!
+  $first: Int
+  $after: String
+) {
+  profileFeed(filter: $filter, userId: $userId, first: $first, after: $after) {
+    edges {
+      node {
+        content {
+          ... on Event {
+            id
+            fandom {
+              id
+            }
+          }
+          ... on Livestream {
+            id
+            fandom {
+              id
+            }
+          }
+          ... on Poll {
+            id
+            fandom {
+              id
+            }
+          }
+          ... on Post {
+            id
+            fandom {
+              id
+            }
+          }
+        }
+      }
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+}

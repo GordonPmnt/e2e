@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [90mundefined[39m,
+  _reportedReason: [32m''[39m,
+  mainContent: PostEntityInfo {
+    _entityId: [32m'35104b43-a628-4c66-a0dd-d7f824e6ab86'[39m,
+    _entityType: [32m'POST'[39m,
+    _entityContent: [32m'program Hampshire Handmade 1654682440120'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'523da506-84ce-4d83-a6f4-b50c97516952'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'Test'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  attachment: [90mundefined[39m
+}

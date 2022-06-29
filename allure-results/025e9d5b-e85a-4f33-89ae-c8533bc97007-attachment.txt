@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: PostEntityInfo {
+    _entityId: [32m'27dfadb8-0d39-4fb8-a015-8b8ce7f3dd16'[39m,
+    _entityType: [32m'POST'[39m,
+    _entityContent: [32m'Loan XSS firewall 1654686519089'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'e2b2c0e5-9d2b-4ea3-bfa9-132ffc535871'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'feed withdrawal Games Keyboard Implemented 1654686520685'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  attachment: [90mundefined[39m
+}

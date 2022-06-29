@@ -1,0 +1,12 @@
+ModerationState {
+  _reportedEntityType: [90mundefined[39m,
+  _reportedReason: [32m''[39m,
+  mainContent: PostEntityInfo {
+    _entityId: [32m'ae1bb15d-06f4-4987-a3b4-a78d77c63546'[39m,
+    _entityType: [32m'POST'[39m,
+    _entityContent: [32m'invoice interface Central 1654682162144'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: [90mundefined[39m,
+  attachment: [90mundefined[39m
+}

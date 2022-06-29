@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: PostEntityInfo {
+    _entityId: [32m'511beb95-489e-4ea3-9eba-cb3961b3bc44'[39m,
+    _entityType: [32m'POST'[39m,
+    _entityContent: [32m'THX bypass Shore 1654682162142'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'de3582c7-64c2-4464-ade0-0f913aaf565e'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'application RAM Lead embrace partnerships 1654682163800'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  attachment: [90mundefined[39m
+}

@@ -1,0 +1,5 @@
+query FindPollById($pollId: String!) {
+  poll(id: $pollId) {
+    id
+  }
+}

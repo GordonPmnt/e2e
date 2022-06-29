@@ -1,0 +1,28 @@
+
+Wed, 11 May 2022 12:05:28 GMT Internal moderator looks for content and proactively decides to take an action on it
+Wed, 11 May 2022 12:05:28 GMT a "POST" has been created by "MOD_MEMBER_1"
+Wed, 11 May 2022 12:05:30 GMT I am logged in the "ADMINISTRATION" app as user "MOD_INTERNAL_MODERATOR_1"
+Wed, 11 May 2022 12:05:34 GMT I look for the non reported entity
+Wed, 11 May 2022 12:05:36 GMT I proactively review the job and hide it with the violationType "CHILD"
+Wed, 11 May 2022 12:05:39 GMT the entity is "hidden" for member "MOD_MEMBER_1" in "community, highlight, event" feeds
+Browser: undefined
+Status: PASSED
+
+Wed, 11 May 2022 12:05:45 GMT Internal moderator looks for content and proactively decides to take an action on it
+Wed, 11 May 2022 12:05:45 GMT a "EVENT" has been created by "MOD_MEMBER_1"
+Wed, 11 May 2022 12:05:47 GMT I am logged in the "ADMINISTRATION" app as user "MOD_INTERNAL_MODERATOR_1"
+Wed, 11 May 2022 12:05:51 GMT I look for the non reported entity
+Wed, 11 May 2022 12:05:52 GMT I proactively review the job and hide it with the violationType "CHILD"
+Wed, 11 May 2022 12:05:55 GMT the entity is "hidden" for member "MOD_MEMBER_1" in "community, highlight, event" feeds
+Browser: undefined
+Status: PASSED
+
+Wed, 11 May 2022 12:06:03 GMT Internal moderator looks for content and proactively decides to take an action on it
+Wed, 11 May 2022 12:06:03 GMT a "POLL" has been created by "MOD_MEMBER_1"
+Wed, 11 May 2022 12:06:04 GMT I am logged in the "ADMINISTRATION" app as user "MOD_INTERNAL_MODERATOR_1"
+Wed, 11 May 2022 12:06:08 GMT I look for the non reported entity
+Wed, 11 May 2022 12:06:10 GMT I proactively review the job and hide it with the violationType "CHILD"
+Wed, 11 May 2022 12:06:12 GMT the entity is "hidden" for member "MOD_MEMBER_1" in "community, highlight, event" feeds
+Browser: undefined
+Status: PASSED
+

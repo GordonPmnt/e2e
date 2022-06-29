@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: PollEntityInfo {
+    _entityId: [32m'9ba3c097-20f4-49bc-8728-89179e140304'[39m,
+    _entityType: [32m'POLL'[39m,
+    _entityContent: [32m'optimize Branding'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'756a2b8e-6be1-40fc-872a-9aefa9d604f3'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'Nepal Outdoors Communications overriding Avon 1654864410241'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  attachment: [90mundefined[39m
+}

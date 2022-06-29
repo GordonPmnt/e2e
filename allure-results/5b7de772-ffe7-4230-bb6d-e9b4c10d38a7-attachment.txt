@@ -1,0 +1,12 @@
+ModerationState {
+  _reportedEntityType: [32m'POST'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: PostEntityInfo {
+    _entityId: [32m'5663ff86-d876-4f48-ab72-cb1a2337fa97'[39m,
+    _entityType: [32m'POST'[39m,
+    _entityContent: [32m'haptic Computers Maine 1654858929181'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: [90mundefined[39m,
+  attachment: [90mundefined[39m
+}

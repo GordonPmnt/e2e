@@ -1,0 +1,12 @@
+ModerationState {
+  _reportedEntityType: [32m'POST'[39m,
+  _reportedReason: [32m'SELF_HARM'[39m,
+  mainContent: PostEntityInfo {
+    _entityId: [32m'407a2d88-d1f5-4d0d-95a2-6b8f68fc7861'[39m,
+    _entityType: [32m'POST'[39m,
+    _entityContent: [32m'infrastructure Refined Auto 1654686522715'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: [90mundefined[39m,
+  attachment: [90mundefined[39m
+}

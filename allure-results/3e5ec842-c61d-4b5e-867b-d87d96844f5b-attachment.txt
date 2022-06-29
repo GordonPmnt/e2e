@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: EventEntityInfo {
+    _entityId: [32m'13d779ba-84a4-4941-aff7-8f6d6c4c78f4'[39m,
+    _entityType: [32m'EVENT'[39m,
+    _entityContent: [32m'Helena Alley 1654686521579'[39m,
+    _author: [32m'MOD_ADMIN'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'ddcbc936-06e9-49cd-92ee-2633fd6a7c5f'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'Dinar Communications generate quantifying Customer 1654686523262'[39m,
+    _author: [32m'MOD_ADMIN'[39m
+  },
+  attachment: [90mundefined[39m
+}

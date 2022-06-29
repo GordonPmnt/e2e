@@ -1,0 +1,12 @@
+ModerationState {
+  _reportedEntityType: [32m'EVENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: EventEntityInfo {
+    _entityId: [32m'ff9bb2d1-9afb-4395-9198-c9c22df5a25e'[39m,
+    _entityType: [32m'EVENT'[39m,
+    _entityContent: [32m'Small Sausages 1654682159809'[39m,
+    _author: [32m'MOD_ADMIN'[39m
+  },
+  comment: [90mundefined[39m,
+  attachment: [90mundefined[39m
+}

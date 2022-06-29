@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: PostEntityInfo {
+    _entityId: [32m'03ac00d0-6091-4b0b-b8c6-170237b4c072'[39m,
+    _entityType: [32m'POST'[39m,
+    _entityContent: [32m'azure connect deposit 1654862005221'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'31073854-ecee-47cd-9e5f-84212f92fb87'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'synthesize Handcrafted Account Pizza intranet 1654862006917'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  attachment: [90mundefined[39m
+}

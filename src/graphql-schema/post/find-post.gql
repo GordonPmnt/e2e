@@ -1,0 +1,6 @@
+query FindPostById($postId: String!) {
+  post(id: $postId) {
+    id
+    status
+  }
+}

@@ -1,0 +1,7 @@
+mutation createPollMutation($input: CreatePollInput!) {
+  createPoll(input: $input) {
+    poll {
+      id
+    }
+  }
+}

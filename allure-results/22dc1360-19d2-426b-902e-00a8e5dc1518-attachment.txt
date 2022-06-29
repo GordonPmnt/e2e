@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: PostEntityInfo {
+    _entityId: [32m'38be844c-4011-4fd3-9323-0199bfe63b0c'[39m,
+    _entityType: [32m'POST'[39m,
+    _entityContent: [32m'Cambridgeshire Brand Account 1654682426448'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'13680fe3-acb1-43d6-a8ec-6496bc08f03e'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'invoice connect Personal New Accountability 1654682428193'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  attachment: [90mundefined[39m
+}

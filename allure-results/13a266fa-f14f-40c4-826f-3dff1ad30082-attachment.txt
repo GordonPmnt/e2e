@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: EventEntityInfo {
+    _entityId: [32m'973895aa-951e-4edd-8ce6-d1a2f1545470'[39m,
+    _entityType: [32m'EVENT'[39m,
+    _entityContent: [32m'JBOD reintermediate 1654862464444'[39m,
+    _author: [32m'MOD_ADMIN'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'fb234d58-d69b-4211-8019-54c60e2b141d'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'Fresh Steel Internal Fuerte Account 1654862466220'[39m,
+    _author: [32m'MOD_ADMIN'[39m
+  },
+  attachment: [90mundefined[39m
+}

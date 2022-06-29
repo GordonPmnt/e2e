@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: EventEntityInfo {
+    _entityId: [32m'c000c71c-2b6c-49c3-a9f7-a2ea7a174634'[39m,
+    _entityType: [32m'EVENT'[39m,
+    _entityContent: [32m'Investor Lempira 1654863285131'[39m,
+    _author: [32m'MOD_ADMIN'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'7dc81ff4-1264-4fd2-9804-08ce7eed21dd'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'Turks Buckinghamshire Technician digital protocol 1654863286914'[39m,
+    _author: [32m'MOD_ADMIN'[39m
+  },
+  attachment: [90mundefined[39m
+}

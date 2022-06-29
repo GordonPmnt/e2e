@@ -1,0 +1,12 @@
+ModerationState {
+  _reportedEntityType: [32m'POST'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: PostEntityInfo {
+    _entityId: [32m'51b4d0f7-bf43-48cc-b0ef-5b0d5443234c'[39m,
+    _entityType: [32m'POST'[39m,
+    _entityContent: [32m'Applications Minnesota programming 1654682154032'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: [90mundefined[39m,
+  attachment: [90mundefined[39m
+}

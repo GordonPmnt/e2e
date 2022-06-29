@@ -1,0 +1,4840 @@
+directive @apollo_studio_metadata(
+  launchId: String
+  buildId: String
+  checkId: String
+) on SCHEMA
+
+input AcceptFriendRequestInput {
+  userId: String!
+}
+
+type AcceptFriendRequestPayload {
+  user: User
+}
+
+input AcceptJoinHiddenFandomInput {
+  fandomId: String!
+}
+
+type AcceptJoinHiddenFandomPayload {
+  member: FandomMember
+}
+
+input AcknowledgeInboxNotificationsInput {
+  notifications: [String!]!
+}
+
+type AcknowledgeInboxNotificationsPayload {
+  notifications: [String!]!
+}
+
+input AddFandomAdminInput {
+  fandomId: String!
+  userId: String!
+}
+
+type AddFandomAdminPayload {
+  member: FandomMember!
+}
+
+input AddPlatformMemberRoleInput {
+  roles: [PlatformMemberRole!]!
+  userId: String!
+}
+
+type AddPlatformMemberRolePayload {
+  user: User
+}
+
+type Administrator {
+  joins: Boolean!
+  mentions: Boolean!
+  reports: Boolean!
+}
+
+input AdministratorInput {
+  joins: Boolean!
+  mentions: Boolean!
+  reports: Boolean!
+}
+
+type AiLabel {
+  """
+  TODO
+  """
+  status: AiLabelStatus!
+
+  """
+  TODO
+  """
+  value: String!
+}
+
+input AiLabelsInput {
+  status: AiLabelStatus!
+
+  """
+  Id of the target content (post, comment, poll, event, image, or video)
+  """
+  targetId: String!
+  value: String!
+}
+
+enum AiLabelStatus {
+  CONFIRMED
+  DENIED
+  PENDING
+}
+
+"""
+Types
+"""
+type AiReport {
+  reportReason: String
+  score: AiReportScore!
+}
+
+"""
+Aggregated score provided by AI content analysis systems.
+"""
+enum AiReportScore {
+  HIGH
+  LOW
+  MEDIUM
+}
+
+input AllFandomMemberReputationsInput {
+  date: Date!
+  memberId: String!
+}
+
+union AppealInfo = CreatorAppealInfo | ReportersAppealInfo
+
+"""
+Inputs
+"""
+input AppealModerationJobInput {
+  """
+  Some text for the appelant to provide a reasoning to the appeal.
+  """
+  appealNote: String
+
+  """
+  The id of the content the appealed moderation decision is about.
+  """
+  entityId: String!
+}
+
+type AppealModerationJobPayload {
+  """
+  The id of the content the appealed moderation decision is about.
+  """
+  entityId: String!
+}
+
+type AppealNote {
+  date: String
+  text: String!
+  user: User
+}
+
+type AppealNoteConnection {
+  edges: [AppealNoteEdge]!
+  pageInfo: PageInfo!
+}
+
+type AppealNoteEdge {
+  cursor: String
+  node: AppealNote
+}
+
+enum AppealStatus {
+  NONE
+  PENDING
+  REVIEWED
+}
+
+input ApproveJoinPrivateFandomInput {
+  fandomId: String!
+  userId: String!
+}
+
+type ApproveJoinPrivateFandomPayload {
+  member: FandomMember
+}
+
+input AttachmentInput {
+  attachmentId: String!
+  type: AttachmentType!
+}
+
+enum AttachmentType {
+  IMAGE
+  VIDEO
+}
+
+type AttributeSummaryItem {
+  name: String!
+  values: [String!]!
+}
+
+input AttributeSummaryItemInput {
+  name: String!
+  values: [String!]!
+}
+
+type AudienceSpecification {
+  onlineSegmentsAudienceFilter: OnlineSegmentAudienceFilter
+  reputationScoreAudienceFilter: ReputationScoreAudienceFilter
+}
+
+input AudienceSpecificationInput {
+  onlineSegmentsAudienceFilter: OnlineSegmentAudienceFilterInput
+  reputationScoreAudienceFilter: ReputationScoreAudienceFilterInput
+}
+
+type Badge {
+  collectedAt: DateTime
+  description: String!
+  fandom: Fandom
+  id: String!
+  image: Image
+  name: String!
+  status: BadgeStatus!
+  type: BadgeType!
+  user: User
+}
+
+"""
+Fiter badges by award status. Defaults to ALL
+"""
+enum BadgeAwardStatus {
+  ALL
+  AWARDED
+  UNAWARDED
+}
+
+type BadgeCollectedNotification implements InboxNotification {
+  acknowledged: Boolean!
+  badge: Badge
+  collectedBy: User
+  id: String!
+  read: Boolean!
+  time: String!
+}
+
+type BadgeConnection {
+  edges: [BadgeEdge]!
+  pageInfo: PageInfo!
+}
+
+type BadgeEdge {
+  cursor: String
+  node: Badge!
+}
+
+"""
+BadgeStatus is only significat to Web and Backend
+"""
+enum BadgeStatus {
+  ACTIVE
+  INACTIVE
+}
+
+enum BadgeType {
+  COMMUNITY
+  GLOBAL
+}
+
+"""
+java.math.BigInteger
+"""
+scalar BigInteger
+
+type Campaign {
+  creator: User
+
+  """
+  ISO-8601
+  """
+  endTime: DateTime
+  fandom: Fandom
+  id: String!
+  item: CampaignItemContent
+  specifications: [CampaignSpecification!]!
+
+  """
+  ISO-8601
+  """
+  startTime: DateTime
+  type: CampaignType
+}
+
+type CampaignConnection {
+  edges: [CampaignEdge]!
+  pageInfo: PageInfo!
+}
+
+type CampaignEdge {
+  cursor: String!
+  node: Campaign!
+}
+
+union CampaignItemContent = Event | Poll | Post
+
+input CampaignItemInput {
+  id: String!
+  type: CampaignItemType!
+}
+
+enum CampaignItemType {
+  POST
+}
+
+type CampaignSpecification {
+  audienceSpecification: AudienceSpecification!
+  deliverySpecification: DeliverySpecification!
+  triggerSpecification: TriggerSpecification!
+}
+
+input CampaignSpecificationInput {
+  audienceSpecification: AudienceSpecificationInput
+  deliverySpecification: DeliverySpecificationInput!
+  triggerSpecification: TriggerSpecificationInput
+}
+
+"""
+type of the campaign
+"""
+enum CampaignType {
+  ANNOUNCEMENT
+  CUSTOM
+  ONBOARDING
+}
+
+input CancelJoinHiddenFandomInput {
+  fandomId: String!
+  userId: String!
+}
+
+type CancelJoinHiddenFandomPayload {
+  member: FandomMember
+}
+
+input CancelJoinPrivateFandomInput {
+  fandomId: String!
+}
+
+type CancelJoinPrivateFandomPayload {
+  fandomId: String
+  roles: [FandomMemberRole!]
+  status: FandomMemberStatus
+  user: User
+}
+
+input CastVoteInput {
+  optionId: String!
+  pollId: String!
+}
+
+type CastVotePayload {
+  poll: Poll!
+}
+
+input ChangeModerationStatusInput {
+  entityId: String!
+
+  """
+  Internal note provided by moderator to explain the decision made
+  """
+  internalNote: String
+
+  """
+  Violation identified by moderator when deciding to take content down, should match [A-Z_]{1,40}
+  """
+  violationType: String
+
+  """
+  Desired state of content visibility after the action is finished
+  """
+  visibility: EntityVisibility
+}
+
+type Chat {
+  channel: ChatChannel!
+  id: String!
+  status: ChatStatus!
+  title: String!
+  type: ChatType!
+}
+
+type ChatChannel {
+  id: String!
+  type: String!
+}
+
+input ChatContext {
+  fandomId: String!
+}
+
+enum ChatStatus {
+  CLOSED
+  OPEN
+}
+
+type ChatToken {
+  value: String!
+}
+
+enum ChatType {
+  EVENT
+  FANDOM
+  LIVESTREAM
+  PRIVATE
+}
+
+type Comment {
+  attachment: CommentAttachment
+  author: User
+  content: String
+  createdAt: DateTime!
+  cursor: String!
+  fandom: Fandom
+  fandomMembership: FandomMember
+  id: String!
+  parent: CommentParent
+  replies(
+    after: String
+    before: String
+    filter: CommentFilterType = VISIBLE
+    first: Int = 10
+    inclusive: Boolean
+    last: Int = 0
+  ): CommentConnection
+  status: CommentStatus!
+  updatedAt: DateTime
+  likeReaction: LikeReaction
+  aiLabels: [AiLabel!]
+}
+
+union CommentAttachment = Image | Video
+
+input CommentAttachmentInput {
+  attachmentId: String!
+  type: CommentAttachmentType!
+}
+
+enum CommentAttachmentType {
+  IMAGE
+  VIDEO
+}
+
+type CommentConnection {
+  edges: [CommentEdge]!
+  pageInfo: PageInfo!
+  totalCount: Int
+}
+
+type CommentEdge {
+  cursor: String!
+  node: Comment!
+}
+
+enum CommentFilterType {
+  ALL
+  MODERATED
+  VISIBLE
+}
+
+type CommentModerationInfo {
+  comment: Comment
+  topParent: TopParentEntity
+  visibility: EntityVisibility
+}
+
+type CommentNotification implements InboxNotification {
+  acknowledged: Boolean!
+  commentCount: BigInteger!
+  fandom: Fandom
+  feedItem: InboxFeedItem
+  id: String!
+  inReplyTo: InboxComposition
+  lastComments: [Comment]!
+  read: Boolean!
+  time: String!
+}
+
+union CommentParent = Comment | Event | Poll | Post
+
+enum CommentStatus {
+  DELETED @deprecated
+  FAILED
+  ONLINE
+  PROCESSING
+}
+
+type CommunityRecommendedHighlights {
+  fandom: Fandom
+  highlights: [FeedItem]!
+  highlightsType: CommunityRecommendedHighlightsType
+}
+
+enum CommunityRecommendedHighlightsType {
+  JOINED
+  RECOMMENDED
+}
+
+"""
+Connect EventChat
+"""
+input ConnectEventChatInput {
+  eventId: String!
+}
+
+type ConnectEventChatPayload {
+  token: String!
+}
+
+"""
+Connect FandomChat
+"""
+type ConnectFandomChatPayload {
+  token: String!
+}
+
+type ContentSearchConnection {
+  edges: [ContentSearchEdge!]!
+  pageInfo: PageInfo!
+}
+
+type ContentSearchEdge {
+  cursor: String!
+  node: ContentSearchNode
+}
+
+union ContentSearchNode = Event | Poll | Post
+
+input CreateCampaignInput {
+  """
+  End time (if null no endtime is used)
+   ISO-8601
+  """
+  endTime: DateTime
+
+  """
+  Fandom
+  """
+  fandomId: String!
+
+  """
+  Campaign item used for this campaign
+  """
+  item: CampaignItemInput!
+
+  """
+  All active specifications
+  """
+  specifications: [CampaignSpecificationInput!]!
+
+  """
+  Start time (if null no starttime is used)
+   ISO-8601
+  """
+  startTime: DateTime
+
+  """
+  Type
+  """
+  type: CampaignType!
+}
+
+type CreateCampaignPayload {
+  campaign: Campaign
+}
+
+input CreateCommentInput {
+  attachment: CommentAttachmentInput
+  content: String
+  replyTo: ParentInput!
+}
+
+type CreateCommentPayload {
+  comment: Comment!
+}
+
+input CreateEventInput {
+  attachments: [EventAttachmentInput]!
+  content: String!
+  endTime: ZonedDateTime!
+  fandomId: String!
+  location: EventLocationInput!
+  startTime: ZonedDateTime!
+  ticketUrl: String
+  title: String!
+  visibleAt: DateTime
+}
+
+type CreateEventPayload {
+  event: Event!
+}
+
+input CreateFandomInput {
+  hashtags: [String!]
+  logoImageId: String
+  name: String!
+  summary: String!
+
+  """
+  This directive should be uncommented when it is supported in the spec.
+  cf. https://github.com/graphql/graphql-spec/pull/805
+  """
+  themeId: String!
+  visibility: FandomVisibility!
+}
+
+type CreateFandomPayload {
+  fandom: Fandom!
+}
+
+input CreateFriendRequestInput {
+  userId: String!
+}
+
+type CreateFriendRequestPayload {
+  user: User
+}
+
+input CreateLikeReactionInput {
+  reactableId: String!
+  reactableType: ReactableType!
+}
+
+type CreateLikeReactionPayload {
+  reaction: LikeReaction!
+}
+
+input CreatePollInput {
+  duration: Duration!
+  fandomId: String!
+  options: [String!]!
+  question: String!
+  visibleAt: DateTime
+}
+
+type CreatePollPayload {
+  poll: Poll!
+}
+
+input CreatePostInput {
+  attachments: [AttachmentInput]!
+  content: String
+  fandomId: String!
+  title: String
+  type: PostType
+  visibleAt: DateTime
+}
+
+type CreatePostPayload {
+  post: Post!
+}
+
+"""
+CreateProductInput takes optional parameters depending on the `productType`.
+- `productType = SINGLE`
+- `status` may be specified, if null defaults to UNPUBLISHED
+- `variant` field should be present
+
+- `productType = MULTI`
+- `status` will be ignored if specified, it will always be UNPUBLISHED
+- `variants` field should be present
+"""
+input CreateProductInput {
+  description: String!
+  name: String!
+  productType: ProductType
+  status: ProductStatus
+  storeId: String!
+  variant: CreateVariantInput
+  variants: [AttributeSummaryItemInput!]
+}
+
+type CreateProductPayload {
+  error: EntityError
+  message: String @deprecated(reason: "Use `error` field instead")
+  product: Product
+  status: StoreMutationStatus! @deprecated(reason: "Use `error` field instead")
+}
+
+input CreateStoreInput {
+  active: Boolean!
+  contactCountryCode: String
+  contactNumber: String
+  content: String!
+  ctaImgId: String!
+  currency: String
+  email: String
+  fandomId: String!
+  storeUrl: String!
+  storeUrlTitle: String
+  tags: [String!]
+  title: String!
+}
+
+type CreateStorePayload {
+  error: EntityError
+  message: String @deprecated(reason: "Use `error` field instead")
+  status: StoreMutationStatus! @deprecated(reason: "Use `error` field instead")
+  store: Store
+}
+
+"""
+`productId` is optional when creating a SINGLE productType.
+It **should not be null** when adding a new variant to and existing MULTI productType
+"""
+input CreateVariantInput {
+  attributes: [VariantAttributeInput!]
+  externalUrl: String!
+  imageIds: [String!]!
+  label: VariantLabel!
+  price: Float!
+  productId: String
+  salePrice: Float
+  saleValidFrom: DateTime
+  saleValidTo: DateTime
+  sku: String
+}
+
+type CreateVariantPayload {
+  error: EntityError
+  message: String @deprecated(reason: "Use `error` field instead")
+  status: StoreMutationStatus! @deprecated(reason: "Use `error` field instead")
+  variant: Variant
+}
+
+type CreatorAppealInfo {
+  """
+  Creator of the entity.
+  """
+  creator: User
+
+  """
+  Some text provided by the creator as a reasoning to his appeal.
+  """
+  note: String
+}
+
+"""
+An RFC-3339 compliant Full Date Scalar
+"""
+scalar Date
+
+"""
+An RFC-3339 compliant DateTime Scalar
+"""
+scalar DateTime
+
+input DeleteCampaignInput {
+  campaignId: String!
+}
+
+type DeleteCampaignPayload {
+  campaignId: String
+}
+
+input DeleteCommentInput {
+  id: String!
+}
+
+type DeleteCommentPayload {
+  comment: Comment!
+  id: String! @deprecated
+}
+
+input DeleteEventInput {
+  eventId: String!
+}
+
+type DeleteEventPayload {
+  eventId: String!
+}
+
+input DeleteFriendshipInput {
+  userId: String!
+}
+
+type DeleteFriendshipPayload {
+  user: User
+}
+
+input DeleteLikeReactionInput {
+  reactionId: String!
+}
+
+type DeleteLikeReactionPayload {
+  reaction: LikeReaction!
+}
+
+input DeletePollInput {
+  pollId: String!
+}
+
+type DeletePollPayload {
+  pollId: String!
+}
+
+input DeletePostInput {
+  postId: String!
+}
+
+type DeletePostPayload {
+  postId: String!
+}
+
+input DeleteProductInput {
+  id: String!
+}
+
+type DeleteProductPayload {
+  error: EntityError
+  message: String @deprecated(reason: "Use `error` field instead")
+  product: Product
+  status: StoreMutationStatus! @deprecated(reason: "Use `error` field instead")
+}
+
+input DeleteUserInput {
+  userId: String!
+}
+
+type DeleteUserPayload {
+  user: User
+}
+
+input DeleteVariantInput {
+  productId: String!
+  variantId: String!
+}
+
+type DeleteVariantPayload {
+  error: EntityError
+  message: String @deprecated(reason: "Use `error` field instead")
+  status: StoreMutationStatus! @deprecated(reason: "Use `error` field instead")
+  variant: Variant
+}
+
+enum DeliveryMechanismType {
+  COMMUNITY_FEED
+  HIGHLIGHTS
+}
+
+type DeliverySpecification {
+  deliveryMechanisms: [DeliveryMechanismType!]!
+}
+
+input DeliverySpecificationInput {
+  deliveryMechanisms: [DeliveryMechanismType!]!
+}
+
+scalar Duration
+
+"""
+End FandomChat
+"""
+input EndFandomChatInput {
+  fandomId: String!
+}
+
+type EndFandomChatPayload {
+  chat: FandomChat!
+}
+
+type EntityError {
+  code: ErrorCode!
+  details: [ErrorItem!]
+}
+
+enum EntityType {
+  COMMENT
+  EVENT
+  POLL
+  POST
+  USER
+}
+
+enum EntityVisibility {
+  HIDDEN
+  VISIBLE
+}
+
+enum EntryType {
+  CREDIT
+  DEBIT
+}
+
+enum ErrorCode {
+  BAD_REQUEST
+  INTERNAL_SERVER_ERROR
+  NOT_FOUND
+  UNPROCESSABLE_ENTITY
+}
+
+enum ErrorDetail {
+  """
+  The deadline expired before the operation could complete.
+
+  For operations that change the state of the system, this error
+  may be returned even if the operation has completed successfully.
+  For example, a successful response from a server could have been
+  delayed long enough for the deadline to expire.
+
+  HTTP Mapping: 504 Gateway Timeout
+  Error Type: UNAVAILABLE
+  """
+  DEADLINE_EXCEEDED
+
+  """
+  The server detected that the client is exhibiting a behavior that
+  might be generating excessive load.
+
+  HTTP Mapping: 429 Too Many Requests or 420 Enhance Your Calm
+  Error Type: UNAVAILABLE
+  """
+  ENHANCE_YOUR_CALM
+
+  """
+  The requested field is not found in the schema.
+
+  This differs from `NOT_FOUND` in that `NOT_FOUND` should be used when a
+  query is valid, but is unable to return a result (if, for example, a
+  specific video id doesn't exist). `FIELD_NOT_FOUND` is intended to be
+  returned by the server to signify that the requested field is not known to exist.
+  This may be returned in lieu of failing the entire query.
+  See also `PERMISSION_DENIED` for cases where the
+  requested field is invalid only for the given user or class of users.
+
+  HTTP Mapping: 404 Not Found
+  Error Type: BAD_REQUEST
+  """
+  FIELD_NOT_FOUND
+
+  """
+  The client specified an invalid argument.
+
+  Note that this differs from `FAILED_PRECONDITION`.
+  `INVALID_ARGUMENT` indicates arguments that are problematic
+  regardless of the state of the system (e.g., a malformed file name).
+
+  HTTP Mapping: 400 Bad Request
+  Error Type: BAD_REQUEST
+  """
+  INVALID_ARGUMENT
+
+  """
+  The provided cursor is not valid.
+
+  The most common usage for this error is when a client is paginating
+  through a list that uses stateful cursors. In that case, the provided
+  cursor may be expired.
+
+  HTTP Mapping: 404 Not Found
+  Error Type: NOT_FOUND
+  """
+  INVALID_CURSOR
+
+  """
+  Unable to perform operation because a required resource is missing.
+
+  Example: Client is attempting to refresh a list, but the specified
+  list is expired. This requires an action by the client to get a new list.
+
+  If the user is simply trying GET a resource that is not found,
+  use the NOT_FOUND error type. FAILED_PRECONDITION.MISSING_RESOURCE
+  is to be used particularly when the user is performing an operation
+  that requires a particular resource to exist.
+
+  HTTP Mapping: 400 Bad Request or 500 Internal Server Error
+  Error Type: FAILED_PRECONDITION
+  """
+  MISSING_RESOURCE
+
+  """
+  Service Error.
+
+  There is a problem with an upstream service.
+
+  This may be returned if a gateway receives an unknown error from a service
+  or if a service is unreachable.
+  If a request times out which waiting on a response from a service,
+  `DEADLINE_EXCEEDED` may be returned instead.
+  If a service returns a more specific error Type, the specific error Type may
+  be returned instead.
+
+  HTTP Mapping: 502 Bad Gateway
+  Error Type: UNAVAILABLE
+  """
+  SERVICE_ERROR
+
+  """
+  Request failed due to network errors.
+
+  HTTP Mapping: 503 Unavailable
+  Error Type: UNAVAILABLE
+  """
+  TCP_FAILURE
+
+  """
+  Request throttled based on server concurrency limits.
+
+  HTTP Mapping: 503 Unavailable
+  Error Type: UNAVAILABLE
+  """
+  THROTTLED_CONCURRENCY
+
+  """
+  Request throttled based on server CPU limits
+
+  HTTP Mapping: 503 Unavailable.
+  Error Type: UNAVAILABLE
+  """
+  THROTTLED_CPU
+
+  """
+  The operation is not implemented or is not currently supported/enabled.
+
+  HTTP Mapping: 501 Not Implemented
+  Error Type: BAD_REQUEST
+  """
+  UNIMPLEMENTED
+
+  """
+  Unknown error.
+
+  This error should only be returned when no other error detail applies.
+  If a client sees an unknown errorDetail, it will be interpreted as UNKNOWN.
+
+  HTTP Mapping: 500 Internal Server Error
+  """
+  UNKNOWN
+}
+
+type ErrorItem {
+  key: String
+  message: String!
+}
+
+enum ErrorType {
+  """
+  Bad Request.
+
+  There is a problem with the request.
+  Retrying the same request is not likely to succeed.
+  An example would be a query or argument that cannot be deserialized.
+
+  HTTP Mapping: 400 Bad Request
+  """
+  BAD_REQUEST
+
+  """
+  The operation was rejected because the system is not in a state
+  required for the operation's execution.  For example, the directory
+  to be deleted is non-empty, an rmdir operation is applied to
+  a non-directory, etc.
+
+  Service implementers can use the following guidelines to decide
+  between `FAILED_PRECONDITION` and `UNAVAILABLE`:
+
+  - Use `UNAVAILABLE` if the client can retry just the failing call.
+  - Use `FAILED_PRECONDITION` if the client should not retry until
+  the system state has been explicitly fixed.  E.g., if an "rmdir"
+       fails because the directory is non-empty, `FAILED_PRECONDITION`
+  should be returned since the client should not retry unless
+  the files are deleted from the directory.
+
+  HTTP Mapping: 400 Bad Request or 500 Internal Server Error
+  """
+  FAILED_PRECONDITION
+
+  """
+  Internal error.
+
+  An unexpected internal error was encountered. This means that some
+  invariants expected by the underlying system have been broken.
+  This error code is reserved for serious errors.
+
+  HTTP Mapping: 500 Internal Server Error
+  """
+  INTERNAL
+
+  """
+  The requested entity was not found.
+
+  This could apply to a resource that has never existed (e.g. bad resource id),
+  or a resource that no longer exists (e.g. cache expired.)
+
+  Note to server developers: if a request is denied for an entire class
+  of users, such as gradual feature rollout or undocumented allowlist,
+  `NOT_FOUND` may be used. If a request is denied for some users within
+  a class of users, such as user-based access control, `PERMISSION_DENIED`
+  must be used.
+
+  HTTP Mapping: 404 Not Found
+  """
+  NOT_FOUND
+
+  """
+  The caller does not have permission to execute the specified
+  operation.
+
+  `PERMISSION_DENIED` must not be used for rejections
+  caused by exhausting some resource or quota.
+  `PERMISSION_DENIED` must not be used if the caller
+  cannot be identified (use `UNAUTHENTICATED`
+  instead for those errors).
+
+  This error Type does not imply the
+  request is valid or the requested entity exists or satisfies
+  other pre-conditions.
+
+  HTTP Mapping: 403 Forbidden
+  """
+  PERMISSION_DENIED
+
+  """
+  The request does not have valid authentication credentials.
+
+  This is intended to be returned only for routes that require
+  authentication.
+
+  HTTP Mapping: 401 Unauthorized
+  """
+  UNAUTHENTICATED
+
+  """
+  Currently Unavailable.
+
+  The service is currently unavailable.  This is most likely a
+  transient condition, which can be corrected by retrying with
+  a backoff.
+
+  HTTP Mapping: 503 Unavailable
+  """
+  UNAVAILABLE
+
+  """
+  Unknown error.
+
+  For example, this error may be returned when
+  an error code received from another address space belongs to
+  an error space that is not known in this address space.  Also
+  errors raised by APIs that do not return enough error information
+  may be converted to this error.
+
+  If a client sees an unknown errorType, it will be interpreted as UNKNOWN.
+  Unknown errors MUST NOT trigger any special behavior. These MAY be treated
+  by an implementation as being equivalent to INTERNAL.
+
+  When possible, a more specific error should be provided.
+
+  HTTP Mapping: 520 Unknown Error
+  """
+  UNKNOWN
+}
+
+input EscalateModerationJobInput {
+  """
+  ID of the entity associated with the moderation job
+  """
+  entityId: String!
+
+  """
+  Target moderation level where the job should be escalated to
+  """
+  target: EscalationTarget
+}
+
+"""
+Payload returned when a moderation job is escalated
+"""
+type EscalateModerationJobPayload {
+  """
+  Moderation job
+  """
+  moderationJob: ModerationJob!
+}
+
+enum EscalationTarget {
+  AAQUA
+  ESCALATIONS
+}
+
+type Event {
+  attachments: [EventAttachment]!
+  content: String!
+  createdAt: DateTime!
+  endTime: ZonedDateTime!
+  fandom: Fandom
+  fandomMembership: FandomMember
+  id: String!
+  interactions: EventInteractions!
+  location: EventLocation!
+  startTime: ZonedDateTime!
+  status: EventStatus!
+  ticketUrl: String
+  title: String!
+  updatedAt: DateTime
+  user: User
+  userReply: UserEventReply
+  visibleAt: DateTime!
+  likeReaction: LikeReaction
+  isPinned: Boolean
+  aiLabels: [AiLabel!]
+  comments(
+    after: String
+    before: String
+    filter: CommentFilterType = VISIBLE
+    first: Int = 10
+    inclusive: Boolean
+    last: Int = 0
+  ): CommentConnection
+  chat: EventChat
+}
+
+union EventAttachment = Image | Video
+
+input EventAttachmentInput {
+  attachmentId: String!
+  type: EventAttachmentType!
+}
+
+enum EventAttachmentType {
+  IMAGE
+  VIDEO
+}
+
+type EventChat {
+  channel: String!
+  id: String!
+  status: ChatStatus!
+  title: String!
+}
+
+type EventInteractions {
+  going: Int!
+  maybe: Int!
+  notGoing: Int!
+}
+
+type EventLocation {
+  displayName: String!
+}
+
+input EventLocationInput {
+  displayName: String!
+}
+
+type EventModerationInfo {
+  event: Event
+  visibility: EntityVisibility
+}
+
+input EventPartialContentInput {
+  updatedValue: String!
+}
+
+input EventPartialDisplayNameInput {
+  updatedValue: String!
+}
+
+input EventPartialEndTimeInput {
+  updatedValue: ZonedDateTime!
+}
+
+input EventPartialLocationInput {
+  displayName: EventPartialDisplayNameInput
+}
+
+input EventPartialStartTimeInput {
+  updatedValue: ZonedDateTime!
+}
+
+input EventPartialTicketUrlInput {
+  updatedValue: String
+}
+
+input EventPartialTitleInput {
+  updatedValue: String!
+}
+
+input EventPartialVisibleAtInput {
+  updatedValue: DateTime
+}
+
+enum EventStatus {
+  FAILED
+  ONLINE
+  PROCESSING
+}
+
+type Fandom {
+  """
+   This directive should be moved to the PaginationInput argument and uncommented when this isn't supported in the spec.
+   cf. https://github.com/graphql/graphql-spec/pull/805
+  @deprecated(reason: "deprecated argument PaginationInput from v6, use unpacked arguments instead")
+  """
+  admins(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    pagination: PaginationInput
+  ): FandomMemberConnection
+  createdAt: DateTime
+  createdBy: User
+  handle: String
+  hashtags: [String!]
+  id: String!
+  logoImage: Image
+  memberCount: Int
+
+  """
+   This directive should be moved to the PaginationInput argument and uncommented when this isn't supported in the spec.
+   cf. https://github.com/graphql/graphql-spec/pull/805
+  @deprecated(reason: "deprecated argument PaginationInput from v6, use unpacked arguments instead")
+  """
+  members(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    pagination: PaginationInput
+  ): FandomMemberConnection
+  myMembership: FandomMember
+  name: String
+  rules: [FandomRule!]
+  rulesLastUpdatedAt: DateTime
+  summary: String
+  theme: FandomTheme
+    @deprecated(
+      reason: "Deprecated from api v7. Theme functionality removed in app build 1.31.0"
+    )
+  visibility: FandomVisibility
+  livestream: Livestream
+  chat: FandomChat
+}
+
+type FandomAddedAsAdminNotification implements InboxNotification {
+  acknowledged: Boolean!
+  assigner: User
+  fandom: Fandom
+  id: String!
+  read: Boolean!
+  time: String!
+}
+
+type FandomChat {
+  channel: String
+  id: String!
+  participantCount: Int
+  status: ChatStatus!
+  title: String!
+}
+
+type FandomConnection {
+  edges: [FandomEdge]!
+  pageInfo: PageInfo!
+}
+
+type FandomEdge {
+  cursor: String!
+  node: Fandom
+}
+
+type FandomInviteAcceptionNotification implements InboxNotification {
+  acceptCount: BigInteger!
+  acknowledged: Boolean!
+  fandom: Fandom
+  id: String!
+  lastAcceptions: [User]!
+  read: Boolean!
+  time: String!
+}
+
+type FandomInviteNotification implements InboxNotification {
+  acknowledged: Boolean!
+  fandom: Fandom
+  id: String!
+  invitor: User
+  read: Boolean!
+  time: String!
+}
+
+type FandomInviteRejectionNotification implements InboxNotification {
+  acknowledged: Boolean!
+  fandom: Fandom
+  id: String!
+  lastRejections: [User]!
+  read: Boolean!
+  rejectCount: BigInteger!
+  time: String!
+}
+
+type FandomInviteResponseNotification implements InboxNotification {
+  accepted: Boolean!
+  acknowledged: Boolean!
+  fandom: Fandom
+  id: String!
+  read: Boolean!
+  time: String!
+}
+
+type FandomJoinedNotification implements InboxNotification {
+  acknowledged: Boolean!
+  fandom: Fandom
+  id: String!
+  joinCount: BigInteger!
+  lastJoiners: [User]!
+  read: Boolean!
+  time: String!
+}
+
+type FandomJoinedSinceTriggerFilter {
+  """
+  ISO-8601
+  """
+  joinedAfter: DateTime
+}
+
+input FandomJoinedSinceTriggerFilterInput {
+  """
+  ISO-8601
+  """
+  joinedAfter: DateTime
+}
+
+type FandomJoinedTriggerFilter {
+  maxDaysAfterJoining: Int
+  minDaysAfterJoining: Int
+}
+
+input FandomJoinedTriggerFilterInput {
+  maxDaysAfterJoining: Int
+  minDaysAfterJoining: Int = 0
+}
+
+type FandomJoinRequestAcceptionNotification implements InboxNotification {
+  acceptCount: BigInteger!
+  acknowledged: Boolean!
+  fandom: Fandom
+  id: String!
+  lastAcceptions: [User]!
+  read: Boolean!
+  time: String!
+}
+
+type FandomJoinRequestNotification implements InboxNotification {
+  acknowledged: Boolean!
+  fandom: Fandom
+  id: String!
+  read: Boolean!
+  requestor: User
+  time: String!
+}
+
+type FandomJoinRequestRejectionNotification implements InboxNotification {
+  acknowledged: Boolean!
+  fandom: Fandom
+  id: String!
+  lastRejections: [User]!
+  read: Boolean!
+  rejectCount: BigInteger!
+  time: String!
+}
+
+type FandomJoinRequestResponseNotification implements InboxNotification {
+  accepted: Boolean!
+  acknowledged: Boolean!
+  fandom: Fandom
+  id: String!
+  read: Boolean!
+  time: String!
+}
+
+type FandomMember {
+  fandom: Fandom
+  roles: [FandomMemberRole!]
+  status: FandomMemberStatus
+  user: User
+}
+
+type FandomMemberConnection {
+  edges: [FandomMemberEdge]!
+  pageInfo: PageInfo!
+}
+
+type FandomMemberEdge {
+  cursor: String!
+  node: FandomMember
+}
+
+type FandomMemberReputation {
+  aesActivityScore: Float!
+  aesEngagementScore: Float!
+  aesStickinessScore: Float!
+  behaviourScore: Float!
+  contributionScore: Float!
+  dataCompletenessScore: Float!
+  date: Date!
+  engagementScore: Float!
+  fandom: Fandom
+  friendlinessScore: Float!
+  member: User
+  promotorScore: Float!
+  reputationScore: Float!
+}
+
+type FandomMemberReputationConnection {
+  edges: [FandomMemberReputationEdge]
+  pageInfo: PageInfo!
+}
+
+type FandomMemberReputationConnectionV2 {
+  edges: [FandomMemberReputationEdgeV2]!
+  pageInfo: PageInfo!
+}
+
+type FandomMemberReputationEdge {
+  cursor: String
+  node: FandomMemberReputation
+}
+
+type FandomMemberReputationEdgeV2 {
+  cursor: String
+  node: FandomMemberReputationV2
+}
+
+input FandomMemberReputationHistoryInput {
+  after: String
+  endDate: Date!
+  fandomId: String!
+  first: Int!
+  memberId: String!
+  startDate: Date!
+}
+
+input FandomMemberReputationInput {
+  date: Date!
+  fandomId: String!
+  memberId: String!
+}
+
+type FandomMemberReputationV2 {
+  components: ScoreComponents!
+  dailyChange: String!
+  date: Date!
+  fandom: Fandom
+  member: User
+  reputationScore: String!
+}
+
+enum FandomMemberRole {
+  ADMIN
+  FAN
+}
+
+enum FandomMemberStatus {
+  """
+  Admin invites to private/hidden fandoms
+  """
+  JOINED
+  NONE
+
+  """
+  Join requests to private fandoms
+  """
+  PENDING_INVITE_REQUEST
+  PENDING_JOIN_REQUEST
+}
+
+type FandomMentionNotification implements InboxNotification {
+  acknowledged: Boolean!
+  composition: InboxComposition
+  fandom: Fandom
+  feedItem: InboxFeedItem
+  id: String!
+  inReplyTo: InboxComposition
+  mention: Fandom
+  mentioner: User
+  read: Boolean!
+  time: String!
+}
+
+type FandomRemovedFromAdminNotification implements InboxNotification {
+  acknowledged: Boolean!
+  assigner: User
+  fandom: Fandom
+  id: String!
+  read: Boolean!
+  time: String!
+}
+
+type FandomReputation {
+  date: Date!
+  fandom: Fandom
+  reputationScore: Float!
+}
+
+type FandomReputationConnection {
+  edges: [FandomReputationEdge]
+  pageInfo: PageInfo!
+}
+
+type FandomReputationEdge {
+  cursor: String
+  node: FandomReputation
+}
+
+input FandomReputationHistoryInput {
+  after: String
+  endDate: Date!
+  fandomId: String!
+  first: Int!
+  startDate: Date!
+}
+
+input FandomReputationInput {
+  date: Date!
+  fandomId: String!
+}
+
+type FandomRule {
+  description: String!
+  name: String!
+}
+
+type FandomSearchConnection {
+  edges: [FandomSearchEdge!]!
+  pageInfo: PageInfo!
+}
+
+type FandomSearchEdge {
+  cursor: String!
+  node: Fandom
+}
+
+type FandomShareNotification implements InboxNotification {
+  acknowledged: Boolean!
+  content: String
+  fandom: Fandom
+  id: String!
+  read: Boolean!
+  sharer: User
+  sharers: [User!]!
+  time: String!
+}
+
+type FandomSuggestionConnection {
+  edges: [FandomSuggestionEdge!]!
+  pageInfo: PageInfo!
+}
+
+type FandomSuggestionEdge {
+  cursor: String!
+  node: Fandom
+}
+
+type FandomTheme {
+  hex: String
+    @deprecated(
+      reason: "Deprecated from api v7. Theme functionality removed in app build 1.31.0"
+    )
+  id: String!
+    @deprecated(
+      reason: "Deprecated from api v7. Theme functionality removed in app build 1.31.0"
+    )
+}
+
+enum FandomVisibility {
+  HIDDEN
+  PRIVATE
+  PUBLIC
+}
+
+type FandomVisitedTriggerFilter {
+  maxDaysSinceLastVisited: Int
+  minDaysSinceLastVisited: Int
+}
+
+input FandomVisitedTriggerFilterInput {
+  maxDaysSinceLastVisited: Int
+  minDaysSinceLastVisited: Int = 0
+}
+
+input FeedFilter {
+  feedItemType: [FeedItemType!]!
+  feedSourceType: [FeedItemSourceType!]!
+}
+
+type FeedItem {
+  content: FeedItemContent
+  sourceInformation: FeedItemSourceInformation!
+}
+
+type FeedItemConnection {
+  edges: [FeedItemEdge!]!
+  pageInfo: PageInfo!
+}
+
+union FeedItemContent = Event | Livestream | Poll | Post
+
+type FeedItemEdge {
+  cursor: String!
+  node: FeedItem!
+}
+
+union FeedItemSourceInformation =
+    PinnedFeedItemInformation
+  | RecommendedFeedItemInformation
+  | RegularFeedItemInformation
+  | TargetedFeedItemInformation
+
+enum FeedItemSourceType {
+  PINNED
+  RECOMMENDED
+  REGULAR
+  TARGETED
+}
+
+enum FeedItemType {
+  EVENT
+  LIVESTREAM
+  POLL
+  POST
+}
+
+type FriendRequestNotification implements InboxNotification {
+  acknowledged: Boolean!
+  friend: User
+  id: String!
+  read: Boolean!
+  time: String!
+}
+
+type FriendRequestResponseNotification implements InboxNotification {
+  accepted: Boolean!
+  acknowledged: Boolean!
+  friend: User
+  id: String!
+  read: Boolean!
+  time: String!
+}
+
+enum FriendshipStatus {
+  FRIENDS
+  FRIEND_REQUEST_RECEIVED
+  FRIEND_REQUEST_SENT
+  NONE
+}
+
+input GenerateFandomLinkInput {
+  """
+  app bundle id
+  """
+  fandom: String!
+  source: String!
+}
+
+type GenerateFandomLinkPayload {
+  link: String!
+}
+
+input GenerateInviteLinkInput {
+  """
+  app bundle id
+  """
+  fandom: String!
+  numberOfSeats: Int
+  source: String!
+}
+
+type GenerateInviteLinkPayload {
+  link: String!
+}
+
+type HighlightsFromCommunityConnection {
+  edges: [HighlightsFromCommunityEdge!]!
+  pageInfo: PageInfo!
+}
+
+type HighlightsFromCommunityEdge {
+  cursor: String!
+  node: CommunityRecommendedHighlights!
+}
+
+type HomeFeedFandomTile {
+  badge: HomeFeedTileBadge
+  fandom: Fandom
+}
+
+type HomeFeedHighlightedUpdatesSection {
+  updateTiles: [HomeFeedTile!]!
+}
+
+type HomeFeedPersonalRecommendationSection {
+  personalRecommendationTiles: [Fandom]!
+}
+
+union HomeFeedSection =
+    HomeFeedHighlightedUpdatesSection
+  | HomeFeedPersonalRecommendationSection
+
+type HomeFeedSectionConnection {
+  edges: [HomeFeedSectionEdge!]!
+}
+
+type HomeFeedSectionEdge {
+  """
+  cursor: String! No paging for now.
+  """
+  node: HomeFeedSection!
+}
+
+input HomeFeedSectionsFilter {
+  sectionTypes: [HomeFeedSectionType!]!
+  tilesTypes: [HomeFeedTilesType!]!
+}
+
+enum HomeFeedSectionType {
+  HIGHLIGHTED_UPDATES
+  PERSONALISED_RECOMMENDATIONS
+}
+
+union HomeFeedTile = HomeFeedFandomTile
+
+type HomeFeedTileBadge {
+  newPosts: Int
+}
+
+enum HomeFeedTilesType {
+  FANDOM_TILE
+}
+
+type Image {
+  contentType: String!
+  height: Int
+  id: String!
+  online: Boolean! @deprecated(reason: "use status instead")
+  ratio: String
+  status: ImageStatus!
+  statusRemarks: String
+  url: String!
+  width: Int
+  aiLabels: [AiLabel!]
+}
+
+enum ImageStatus {
+  ONLINE
+  PENDING
+  PROCESSING_FAILED
+  VALIDATION_FAILED
+}
+
+union InboxComposition = Comment | Event | Poll | Post
+
+type InboxConfiguration {
+  notifyOn: NotifyOn!
+}
+
+input InboxConfigurationInput {
+  notifyOn: NotifyOnInput!
+}
+
+union InboxFeedItem = Event | Poll | Post
+
+interface InboxNotification {
+  acknowledged: Boolean!
+  id: String!
+  read: Boolean!
+  time: String!
+}
+
+type InboxNotificationConnection {
+  edges: [InboxNotificationEdge]!
+  pageInfo: PageInfo
+  readMark: String @deprecated
+  seenMark: String
+  unseenCount: BigInteger!
+}
+
+type InboxNotificationEdge {
+  cursor: String!
+  node: InboxNotification!
+}
+
+type IngestServer {
+  endpoint: String!
+  streamKey: String!
+}
+
+input InviteJoinHiddenFandomInput {
+  fandomId: String!
+  userId: String!
+}
+
+type InviteJoinHiddenFandomPayload {
+  member: FandomMember
+}
+
+"""
+Join Chat
+"""
+input JoinChatInput {
+  chatId: String!
+}
+
+type JoinChatPayload {
+  chat: Chat!
+}
+
+"""
+WATCHER
+"""
+input JoinLivestreamInput {
+  """
+  @deprecated(reason: "ignored")
+  """
+  fandomId: String
+  livestreamId: String!
+
+  """
+  @deprecated(reason: "ignored")
+  """
+  userId: String
+}
+
+"""
+WATCHER
+"""
+type JoinLivestreamPayload {
+  message: String
+  status: LivestreamMutationStatus!
+}
+
+input JoinPublicFandomInput {
+  fandomId: String!
+}
+
+type JoinPublicFandomPayload {
+  member: FandomMember
+}
+
+input LeaveFandomInput {
+  fandomId: String!
+}
+
+type LeaveFandomPayload {
+  fandomId: String
+  roles: [FandomMemberRole!]
+  status: FandomMemberStatus
+  user: User
+}
+
+input LeaveLivestreamInput {
+  """
+  @deprecated(reason: "ignored")
+  """
+  fandomId: String
+  livestreamId: String!
+
+  """
+  @deprecated(reason: "ignored")
+  """
+  userId: String
+}
+
+type LeaveLivestreamPayload {
+  message: String
+  status: LivestreamMutationStatus!
+}
+
+type LikeInformation {
+  likedAt: DateTime
+}
+
+type LikeNotification implements InboxNotification {
+  acknowledged: Boolean!
+  composition: InboxComposition
+  fandom: Fandom
+  feedItem: InboxFeedItem
+  id: String!
+  inReplyTo: InboxComposition
+  lastLikers: [User]!
+  likeCount: BigInteger!
+  read: Boolean!
+  time: String!
+}
+
+"""
+Summary of like reactions (totalCount) and info about the reaction
+of the authenticated user (hasLike, likedAt and reactionId where likedAt and
+reactionId are set to null when hasLike is false).
+"""
+type LikeReaction {
+  hasLike: Boolean!
+  likedAt: DateTime
+  reactionId: String
+  totalCount: Long!
+}
+
+"""
+The Livestream schema
+"""
+type Livestream {
+  description: String
+  fandom: Fandom
+  id: String!
+  playbackUrl: String
+  startDateTime: String
+  state: LivestreamState
+  thumbnailImage: Image
+  title: String
+  user: User
+  viewers: Viewers
+  websocketChannel: WebsocketChannel
+  chat: LivestreamChat
+}
+
+type LivestreamByAuthenticatedUser {
+  ingestServer: IngestServer
+  livestream: Livestream
+}
+
+type LivestreamChat {
+  channel: String!
+  id: String!
+  status: ChatStatus!
+  title: String!
+}
+
+type LivestreamConnection {
+  edges: [LivestreamEdge]!
+  pageInfo: PageInfo!
+}
+
+type LivestreamEdge {
+  cursor: String!
+  node: Livestream!
+}
+
+enum LivestreamHealth {
+  HEALTHY
+  STARVING
+  UNKNOWN
+}
+
+enum LivestreamMutationStatus {
+  FAIL
+  SUCCESS
+}
+
+type LivestreamQuestion {
+  answeredDateTime: String
+  archived: Boolean
+  createdDateTime: String!
+  id: String!
+  likes: LivestreamQuestionLikes!
+  questionText: String!
+  user: User
+  visibility: Boolean!
+}
+
+type LivestreamQuestionEdge {
+  cursor: String!
+  node: LivestreamQuestion!
+}
+
+input LivestreamQuestionInput {
+  livestreamId: String!
+  questionText: String!
+
+  """
+  @deprecated(reason: "ignored")
+  """
+  userId: String
+}
+
+type LivestreamQuestionLike {
+  likeDateTime: String!
+  user: User
+}
+
+input LivestreamQuestionLikeInput {
+  """
+  @deprecated(reason: "use questionId")
+  """
+  livestreamId: String
+  questionId: String!
+
+  """
+  @deprecated(reason: "ignored")
+  """
+  userId: String
+}
+
+type LivestreamQuestionLikes {
+  likeCount: Int
+  likes: [LivestreamQuestionLike]
+}
+
+type LivestreamQuestionPayload {
+  likesCount: Int
+  message: String
+  status: LivestreamMutationStatus!
+}
+
+type LivestreamQuestions {
+  pageInfo: PageInfo
+  questions: [LivestreamQuestion]!
+}
+
+type LivestreamQuestionsConnection {
+  edges: [LivestreamQuestionEdge]!
+  pageInfo: PageInfo!
+}
+
+enum LivestreamState {
+  CREATED
+  INTERRUPTED
+  LIVE
+  STOPPED
+}
+
+input LivestreamTestDataInput {
+  fandomId: String
+  livestreamId: String
+  size: Int
+}
+
+type LivestreamTestDataPayload {
+  livestreamId: String
+  message: String
+}
+
+type LivestreamViewer {
+  joinDateTime: String!
+  user: User
+}
+
+type LivestreamViewerConnection {
+  edges: [LivestreamViewerEdge]!
+  pageInfo: PageInfo!
+}
+
+type LivestreamViewerEdge {
+  cursor: String!
+  node: LivestreamViewer!
+}
+
+"""
+A 64-bit signed integer
+"""
+scalar Long
+
+input MarkInboxNotificationsAsReadInput {
+  readMark: String!
+}
+
+type MarkInboxNotificationsAsReadResult {
+  readMark: String!
+}
+
+input MarkInboxNotificationsAsSeenInput {
+  seenMark: String!
+}
+
+type MarkInboxNotificationsAsSeenPayload {
+  seenMark: String!
+}
+
+type MeaningfulInteractions {
+  communityBuilding: String!
+  dailyChange: String!
+  discovery: String!
+  score: String!
+  sustainedLoyalty: String!
+}
+
+type MemberInviteLink {
+  numberOfSeats: Int!
+  url: String!
+}
+
+type MemberInvitesAllocatedNotification implements InboxNotification {
+  acknowledged: Boolean!
+  amountAllocated: BigInteger
+  id: String!
+  read: Boolean!
+  time: String!
+}
+
+input MemberReportByIdInput {
+  entityId: String!
+  memberId: String!
+}
+
+type MemberReportPayload {
+  """
+  Some text to provided by the appelant as a reasoning to the appeal.
+  """
+  appealNote: String
+  appealStatus: AppealStatus!
+  moderationJob: ModerationJob!
+  reportReason: String!
+}
+
+type ModerationAppealInfo {
+  appealStatus: AppealStatus!
+  entityId: String!
+  fandom: Fandom
+  visibility: EntityVisibility
+}
+
+input ModerationAppealInfoInput {
+  entityId: String!
+}
+
+input ModerationCountersFilter {
+  fandomId: String!
+}
+
+type ModerationCountersPayload {
+  pendingJobsCount: String!
+}
+
+enum ModerationDecision {
+  CONTENT_HIDDEN
+  CONTENT_KEPT
+}
+
+"""
+Unions
+"""
+union ModerationEntity =
+    CommentModerationInfo
+  | EventModerationInfo
+  | PollModerationInfo
+  | PostModerationInfo
+  | UserModerationInfo
+
+type ModerationJob {
+  """
+  Information about appeals
+  """
+  appealInfo: AppealInfo
+
+  """
+  When the entity was last changed to PENDING - entered the job queue
+  """
+  changedToPendingTimestamp: String
+
+  """
+  Entity this job relates to
+  """
+  entity: ModerationEntity
+
+  """
+  ID of the entity this job relates to (needed in case moderation entity doesn't resolve by federation)
+  """
+  entityId: String
+
+  """
+  The list of changes made to the moderation job.
+  """
+  history: [ModerationJobEvent!]
+
+  """
+  ID of the job
+  """
+  id: String!
+  moderationStatus: ModerationStatus
+
+  """
+  To which moderation queue the job belongs in case of PENDING job.
+  Possible values are 'AAQUA', 'ESCALATIONS', 'COMMUNITY'
+  """
+  queues: [String!]!
+
+  """
+  Information about reports (by members and AI)
+  """
+  reportInfo: ReportInfo
+
+  """
+  Violation identified by moderator when deciding to take content down
+  """
+  violationType: String
+}
+
+"""
+Represent in the ModerationJob history the fact that a job decision has been appealed by either the creator or one of the reporter.
+"""
+type ModerationJobAppealedEvent {
+  """
+  id of the related moderation job (this is not the entity id)
+  """
+  jobId: String
+
+  """
+  The time at which the job decision has been appealed for the first time.
+  """
+  timestamp: String!
+}
+
+"""
+An event in the history of a ModerationJob that represent the fact that the job was escalated automatically wthout a moderator intervention.
+"""
+type ModerationJobAutoEscalatedEvent {
+  """
+  The queue to which the ModerationJob was automatically escalated.
+  """
+  escalationTarget: EscalationTarget
+
+  """
+  Id of the related moderation job (this is not the entity id).
+  """
+  jobId: String
+
+  """
+  The time at which the ModerationJob was automatically escalated.
+  """
+  timestamp: String!
+}
+
+"""
+Represent in the ModerationJob history the fact that a content of the moderated entity was updated.
+"""
+type ModerationJobContentUpdatedEvent {
+  """
+  id of the related moderation job (this is not the entity id)
+  """
+  jobId: String
+
+  """
+  The time at which the content of the moderated entity has been updated for the last time.
+  """
+  timestamp: String!
+}
+
+type ModerationJobEdge {
+  cursor: String
+  node: ModerationJob
+}
+
+"""
+Represent in the ModerationJob history the fact that it was escalated.
+"""
+type ModerationJobEscalatedEvent {
+  """
+  The queue to which the ModerationJob was escalated.
+  """
+  escalationTarget: EscalationTarget
+
+  """
+  id of the related moderation job (this is not the entity id)
+  """
+  jobId: String
+
+  """
+  The moderator making the decision to escalate the ModerationJob.
+  """
+  moderator: User
+
+  """
+  The time at which the ModerationJob was escalated.
+  """
+  timestamp: String!
+}
+
+"""
+Represent an event in the ModerationJob history
+"""
+union ModerationJobEvent =
+    ModerationJobAppealedEvent
+  | ModerationJobAutoEscalatedEvent
+  | ModerationJobContentUpdatedEvent
+  | ModerationJobEscalatedEvent
+  | ModerationJobHiddenEvent
+  | ModerationJobKeptEvent
+  | ModerationJobReportedEvent
+  | ModerationJobUserProfileResetEvent
+  | ModerationJobUserReviewedEvent
+  | ModerationJobUserSuspendedEvent
+  | ModerationJobUserUnsuspendedEvent
+
+"""
+Represent in the ModerationJob history the fact that some content has been hidden.
+"""
+type ModerationJobHiddenEvent {
+  """
+  Information about appeals of the job, action on which resulted in this event.
+  """
+  appealInfo: AppealInfo
+
+  """
+  id of the related moderation job (this is not the entity id)
+  """
+  jobId: String
+
+  """
+  The moderator making the decision to hide the content.
+  """
+  moderator: User
+
+  """
+  The moderator internal note to provide more details on why the content was hidden.
+  """
+  moderatorInternalNote: String
+
+  """
+  Information about reports of the job, action on which resulted in this event.
+  """
+  reportInfo: ReportInfo
+
+  """
+  The time at which the content has been hidden.
+  """
+  timestamp: String!
+
+  """
+  Violation type identified by the moderator who hid the content.
+  """
+  violationType: String
+}
+
+"""
+Represent in the ModerationJob history the fact that some content has been kept visible.
+"""
+type ModerationJobKeptEvent {
+  """
+  Information about appeals of the job, action on which resulted in this event.
+  """
+  appealInfo: AppealInfo
+
+  """
+  id of the related moderation job (this is not the entity id)
+  """
+  jobId: String
+
+  """
+  The moderator making the decision to keep the content visible.
+  """
+  moderator: User
+
+  """
+  The moderator internal note to provide more details on why the content was kept visible..
+  """
+  moderatorInternalNote: String
+
+  """
+  Information about reports of the job, action on which resulted in this event.
+  """
+  reportInfo: ReportInfo
+
+  """
+  The time at which the content was kept visible.
+  """
+  timestamp: String!
+}
+
+"""
+Represent in the ModerationJob history the fact that the content was reported.
+"""
+type ModerationJobReportedEvent {
+  """
+  id of the related moderation job (this is not the entity id)
+  """
+  jobId: String
+
+  """
+  The last time at which the job was reported.
+  """
+  timestamp: String!
+}
+
+type ModerationJobsConnection {
+  edges: [ModerationJobEdge]!
+  pageInfo: PageInfo!
+}
+
+type ModerationJobsCountersPayload {
+  pendingJobsCount: Int!
+  reviewedJobsCount: Int!
+}
+
+input ModerationJobsFilter {
+  entityType: EntityType
+
+  """
+  The id of the fandom of the jobs we want to retrieve. Only displays community level jobs if the user is not a aaqua level moderator.
+  """
+  fandomId: String
+
+  """
+  The moderation de decision of the jobs we want to retrieve.
+  """
+  moderationDecision: ModerationDecision
+  moderationStatus: ModerationStatus
+
+  """
+  The queues from which we want to fetch the moderation jobs.
+  Values can be:
+  - AAQUA for the Aaqua level moderation jobs. Requires INTERNAL_MODERATOR or EXTERNAL_MODERATOR platform roles.
+  - COMMUNITY for the community level moderation jobs. Requires INTERNAL_MODERATOR or EXTERNAL_MODERATOR platform roles when
+  fandomId is not set or ADMIN community role when fandomId is set.
+  - ESCALATIONS for the Escalation level moderation jobs. Requires INTERNAL_MODERATOR platform role.
+
+  If you want jobs from multiple queues the only valid queue combination is: [AAQUA, COMMUNITY] for job listings
+  and [AAQUA, ESCALATIONS] for counters. We DO NOT allow arbitrary combinations to avoid proliferation of
+  indexes caused by these combinations
+  """
+  queues: [String!]
+
+  """
+  Reason indicated by members when reporting content, should match [A-Z_]{1,40}
+  """
+  reportReason: String
+
+  """
+  Violation identified by moderator when deciding to take content down, should match [A-Z_]{1,40}
+  """
+  violationType: String
+}
+
+"""
+Represent in the ModerationJob history the fact the profile of a user was reset.
+"""
+type ModerationJobUserProfileResetEvent {
+  """
+  Information about appeals of the job, action on which resulted in this event.
+  """
+  appealInfo: AppealInfo
+
+  """
+  id of the related moderation job (this is not the user id)
+  """
+  jobId: String
+
+  """
+  The moderator making the decision to reset the profile of the user.
+  """
+  moderator: User
+
+  """
+  The moderator internal note to provide more details on why the profile of the user was reset.
+  """
+  moderatorInternalNote: String
+
+  """
+  Information about reports of the job, action on which resulted in this event.
+  """
+  reportInfo: ReportInfo
+
+  """
+  The time at which the profile of the user was reset.
+  """
+  timestamp: String!
+
+  """
+  Violation type identified by the moderator who reset the profile of the user.
+  """
+  violationType: String
+}
+
+"""
+Represent in the ModerationJob history the fact that a reported user has been reviewed and no action was taken against them.
+"""
+type ModerationJobUserReviewedEvent {
+  """
+  Information about appeals of the job, action on which resulted in this event.
+  """
+  appealInfo: AppealInfo
+
+  """
+  id of the related moderation job (this is not the user id).
+  """
+  jobId: String
+
+  """
+  The moderator that reviewed the user moderation job.
+  """
+  moderator: User
+
+  """
+  The moderator internal note to provide more details the review.
+  """
+  moderatorInternalNote: String
+
+  """
+  Information about reports of the job, action on which resulted in this event.
+  """
+  reportInfo: ReportInfo
+
+  """
+  The time at which the user moderation job was reviewed.
+  """
+  timestamp: String!
+}
+
+"""
+Represent in the ModerationJob history the fact that a user was suspended for a period of time.
+"""
+type ModerationJobUserSuspendedEvent {
+  """
+  Information about appeals of the job, action on which resulted in this event.
+  """
+  appealInfo: AppealInfo
+
+  """
+  The duration (in hours) during which the user is suspended.
+  """
+  durationInHours: Int!
+
+  """
+  id of the related moderation job (this is not the user id).
+  """
+  jobId: String
+
+  """
+  The moderator making the decision to suspend the user.
+  """
+  moderator: User
+
+  """
+  The moderator internal note to provide more details on why the user was suspended.
+  """
+  moderatorInternalNote: String
+
+  """
+  Information about reports of the job, action on which resulted in this event.
+  """
+  reportInfo: ReportInfo
+
+  """
+  The time at which the user was suspended.
+  """
+  timestamp: String!
+
+  """
+  Violation type identified by the moderator who suspended the user.
+  """
+  violationType: String
+}
+
+"""
+Represent in the ModerationJob history the fact that a user previously suspended was unsuspended.
+"""
+type ModerationJobUserUnsuspendedEvent {
+  """
+  id of the related moderation job (this is not the user id).
+  """
+  jobId: String
+
+  """
+  The time at which the user was unsuspended.
+  """
+  timestamp: String!
+}
+
+type ModerationNotification implements InboxNotification {
+  acknowledged: Boolean!
+  composition: InboxComposition
+  fandom: Fandom
+  feedItem: InboxFeedItem
+  id: String!
+  inReplyTo: InboxComposition
+  moderatedByAaqua: Boolean!
+  read: Boolean!
+  time: String!
+}
+
+enum ModerationStatus {
+  """
+  The moderation job doesn't exist yet but will be created if a moderator reviews it.
+  """
+  NONE
+
+  """
+  The moderation job is waiting to be reviewed by a moderator. The moderation job is in one of the moderation queues.
+  """
+  PENDING
+
+  """
+  The moderation job has been reviewed by a moderator. The moderation job is in the history.
+  """
+  REVIEWED
+}
+
+type ModerationStatusPayload {
+  moderationStatus: ModerationStatus
+  visibility: EntityVisibility
+}
+
+enum ModeratorType {
+  """
+  The Aaqua moderators trained to deal with all types of content.
+  """
+  AAQUA
+
+  """
+  The community moderators.
+  """
+  COMMUNITY
+}
+
+type Mutation {
+  uploadVideo(input: VideoUploadInput!): UploadVideoPayload!
+  videoPreSignedUploadUrl(input: UploadVideoInput): PreSignedUrl
+    @deprecated(reason: "use uploadVideo instead")
+  acceptFriendRequest(
+    input: AcceptFriendRequestInput!
+  ): AcceptFriendRequestPayload
+  addPlatformMemberRole(
+    input: AddPlatformMemberRoleInput!
+  ): AddPlatformMemberRolePayload
+  createFriendRequest(
+    input: CreateFriendRequestInput!
+  ): CreateFriendRequestPayload
+  deleteFriendship(input: DeleteFriendshipInput!): DeleteFriendshipPayload
+  deleteUser(input: DeleteUserInput!): DeleteUserPayload
+  rejectFriendRequest(
+    input: RejectFriendRequestInput!
+  ): RejectFriendRequestPayload
+  removePlatformMemberRole(
+    input: RemovePlatformMemberRoleInput!
+  ): RemovePlatformMemberRolePayload
+  undoFriendRequest(
+    input: UndoFriendshipRequestInput!
+  ): UndoFriendshipRequestPayload
+  updateUserProfile(input: UpdateUserProfileInput!): UpdateUserProfilePayload
+
+  """
+  Create campaign
+  """
+  createCampaign(input: CreateCampaignInput!): CreateCampaignPayload
+
+  """
+  Delete campaign
+  """
+  deleteCampaign(input: DeleteCampaignInput!): DeleteCampaignPayload
+
+  """
+  Update campaign
+  """
+  updateCampaign(input: UpdateCampaignInput!): UpdateCampaignPayload
+
+  """
+  Creates a new product. Products come in two types:
+  - SINGLE: A product with a single variant
+  - MULTI: A product with multiple variants
+
+  see `CreateProductInput` for more info
+  """
+  createProduct(input: CreateProductInput!): CreateProductPayload!
+  createStore(input: CreateStoreInput!): CreateStorePayload!
+  createVariant(input: CreateVariantInput!): CreateVariantPayload!
+  deleteProduct(input: DeleteProductInput!): DeleteProductPayload!
+  deleteVariant(input: DeleteVariantInput!): DeleteVariantPayload!
+  updateProduct(input: UpdateProductInput!): UpdateProductPayload!
+  updateProductStatus(input: UpdateProductStatusInput!): UpdateProductPayload!
+  updateStore(input: UpdateStoreInput!): UpdateStorePayload!
+  updateVariant(input: UpdateVariantInput!): UpdateVariantPayload!
+  updateVariantLabel(input: UpdateVariantLabelInput!): UpdateVariantPayload!
+  generateFandomLink(
+    input: GenerateFandomLinkInput!
+  ): GenerateFandomLinkPayload!
+  generateInviteLink(
+    input: GenerateInviteLinkInput!
+  ): GenerateInviteLinkPayload!
+  shareFandom(input: ShareFandomInput!): ShareFandomPayload!
+  createLikeReaction(
+    input: CreateLikeReactionInput!
+  ): CreateLikeReactionPayload!
+  deleteLikeReaction(
+    input: DeleteLikeReactionInput!
+  ): DeleteLikeReactionPayload!
+    @deprecated(reason: "use unlikeReaction instead")
+  unlikeReaction(input: UnlikeReactionInput!): UnlikeReactionPayload!
+  registerPushNotificationToken(
+    input: RegisterPushNotificationTokenInput!
+  ): RegisterPushNotificationTokenPayload!
+  unregisterPushNotificationToken(
+    input: UnregisterPushNotificationTokenInput!
+  ): UnregisterPushNotificationTokenPayload!
+  createPost(input: CreatePostInput!): CreatePostPayload!
+  deletePost(input: DeletePostInput!): DeletePostPayload!
+  updatePost(input: UpdatePostInput!): UpdatePostPayload!
+  castVote(input: CastVoteInput!): CastVotePayload!
+  createPoll(input: CreatePollInput!): CreatePollPayload!
+  deletePoll(input: DeletePollInput!): DeletePollPayload!
+  pinContent(input: PinContentInput!): PinContentPayload!
+  unpinContent(input: UnpinContentInput!): UnpinContentPayload!
+
+  """
+  Lets a user appeal a decision made by a moderator regarding some content.
+  The user can be one of the one having reported this content to moderation or he can be the creator of said content.
+  """
+  appealModerationJob(
+    input: AppealModerationJobInput!
+  ): AppealModerationJobPayload
+
+  """
+  Change the moderation status of the moderation job associated to an entity (Post, Poll, Event, Comment).
+  """
+  changeModerationStatus(
+    input: ChangeModerationStatusInput!
+  ): ModerationStatusPayload
+
+  """
+  Escalate moderation job to a higher level moderator
+  """
+  escalateModerationJob(
+    input: EscalateModerationJobInput!
+  ): EscalateModerationJobPayload
+
+  """
+  Report a user created content (post, comment,...) to be reviewed by the moderators when some threshold is reached.
+  """
+  reportEntityByMember(
+    input: ReportEntityByMemberInput!
+  ): ReportEntityByMemberPayload
+
+  """
+  Report a user to be displayed to an Aaqua admin for review.
+  """
+  reportUser(input: ReportUserInput!): ReportUserPayload
+
+  """
+  Reset a user's profile. The action can't be undone. Transition the associated moderation job to the reviewed moderation status.
+  """
+  resetUserProfile(input: ResetUserProfileInput!): ResetUserProfilePayload
+
+  """
+  Provide feedback for AI-detected labels for content units (individual media or texts)
+  """
+  reviewAiLabels(input: ReviewAiLabelsInput!): ReviewAiLabelsPayload
+
+  """
+  Review a moderation job associated to a user without taking any action.
+  Transition the associated moderation job to the reviewed moderation status.
+  """
+  reviewUserModerationJob(
+    input: ReviewUserModerationJobInput!
+  ): ReviewUserModerationJobPayload
+
+  """
+  Suspend a user for a period of time. The user is automatically unsuspended after the period of time.
+  Transition the associated moderation job to the reviewed moderation status.
+  """
+  suspendUser(input: SuspendUserInput!): SuspendUserPayload
+  archiveQuestion(input: QuestionIdInput!): LivestreamQuestionPayload
+
+  """
+  Livestream Questions
+  """
+  askQuestion(input: LivestreamQuestionInput!): LivestreamQuestionPayload
+
+  """
+  WATCHER
+  """
+  joinLivestream(input: JoinLivestreamInput!): JoinLivestreamPayload
+  leaveLivestream(input: LeaveLivestreamInput!): LeaveLivestreamPayload
+  likeQuestion(input: LivestreamQuestionLikeInput!): LivestreamQuestionPayload
+  loadTestLivestreamQuestions(
+    input: LivestreamTestDataInput!
+  ): LivestreamTestDataPayload
+
+  """
+  test data mutations
+  """
+  loadTestLivestreamViewers(
+    input: LivestreamTestDataInput!
+  ): LivestreamTestDataPayload
+  removeQuestion(input: QuestionIdInput!): LivestreamQuestionPayload
+
+  """
+  HOST
+  returns the data necessary to start a livestream
+  """
+  startLivestream(input: StartLivestreamInput!): StartLivestreamPayload
+
+  """
+  stops a user's livestream
+  """
+  stopLivestream(input: StopLivestreamInput!): StopLivestreamPayload
+  unlikeQuestion(input: LivestreamQuestionLikeInput!): LivestreamQuestionPayload
+  acknowledgeInboxNotifications(
+    input: AcknowledgeInboxNotificationsInput!
+  ): AcknowledgeInboxNotificationsPayload!
+  markInboxNotificationsAsRead(
+    input: MarkInboxNotificationsAsReadInput!
+  ): MarkInboxNotificationsAsReadResult! @deprecated
+  markInboxNotificationsAsSeen(
+    input: MarkInboxNotificationsAsSeenInput!
+  ): MarkInboxNotificationsAsSeenPayload!
+  setInboxConfiguration(input: InboxConfigurationInput!): InboxConfiguration!
+  uploadImage(input: UploadImageInput!): UploadImage!
+  acceptJoinHiddenFandom(
+    input: AcceptJoinHiddenFandomInput!
+  ): AcceptJoinHiddenFandomPayload
+  addFandomAdmin(input: AddFandomAdminInput!): AddFandomAdminPayload
+  approveJoinPrivateFandom(
+    input: ApproveJoinPrivateFandomInput!
+  ): ApproveJoinPrivateFandomPayload
+  cancelJoinHiddenFandom(
+    input: CancelJoinHiddenFandomInput!
+  ): CancelJoinHiddenFandomPayload
+  cancelJoinPrivateFandom(
+    input: CancelJoinPrivateFandomInput!
+  ): CancelJoinPrivateFandomPayload
+  createFandom(input: CreateFandomInput!): CreateFandomPayload
+  inviteJoinHiddenFandom(
+    input: InviteJoinHiddenFandomInput!
+  ): InviteJoinHiddenFandomPayload
+  joinPublicFandom(input: JoinPublicFandomInput!): JoinPublicFandomPayload
+  leaveFandom(input: LeaveFandomInput!): LeaveFandomPayload
+  rejectJoinHiddenFandom(
+    input: RejectJoinHiddenFandomInput!
+  ): RejectJoinHiddenFandomPayload
+  rejectJoinPrivateFandom(
+    input: RejectJoinPrivateFandomInput!
+  ): RejectJoinPrivateFandomPayload
+  removeFandomAdmin(input: RemoveFandomAdminInput!): RemoveFandomAdminPayload
+  removeFandomMember(input: RemoveFandomMemberInput!): RemoveFandomMemberPayload
+  requestJoinPrivateFandom(
+    input: RequestJoinPrivateFandomInput!
+  ): RequestJoinPrivateFandomPayload
+  updateFandom(input: UpdateFandomInput!): UpdateFandomPayload
+  createEvent(input: CreateEventInput!): CreateEventPayload!
+  deleteEvent(input: DeleteEventInput!): DeleteEventPayload!
+  replyEvent(input: UserEventResponseInput!): UserEventResponsePayload!
+  updateEvent(input: UpdateEventInput!): UpdateEventPayload!
+  updateEventPartial(
+    input: UpdateEventPartialInput!
+  ): UpdateEventPartialPayload!
+  createComment(input: CreateCommentInput!): CreateCommentPayload!
+  deleteComment(input: DeleteCommentInput!): DeleteCommentPayload!
+  updateComment(input: UpdateCommentInput!): UpdateCommentPayload!
+  connectEventChat(input: ConnectEventChatInput!): ConnectEventChatPayload!
+  connectFandomChat: ConnectFandomChatPayload! @deprecated
+  endFandomChat(input: EndFandomChatInput!): EndFandomChatPayload! @deprecated
+  joinChat(input: JoinChatInput!): JoinChatPayload!
+  startFandomChat(input: StartFandomChatInput!): StartFandomChatPayload!
+    @deprecated
+  startLivestreamChat(
+    input: StartLivestreamChatInput!
+  ): StartLivestreamChatPayload
+    @deprecated(reason: "not needed anymore to start livestreamChat")
+  startPrivateChat(input: StartPrivateChatInput!): StartPrivateChatPayload!
+}
+
+type MutedFandoms {
+  mutedFandomIds: [String]!
+}
+
+input MutedFandomsInput {
+  mutedFandomIds: [String]!
+}
+
+type MyFandomSearchConnection {
+  edges: [MyFandomSearchEdge!]!
+  pageInfo: PageInfo!
+}
+
+type MyFandomSearchEdge {
+  cursor: String!
+  node: Fandom
+}
+
+type NewFriendNotification implements InboxNotification {
+  acknowledged: Boolean!
+  friend: User
+  id: String!
+  read: Boolean!
+  time: String!
+}
+
+type NotifyOn {
+  administrator: Administrator!
+  mutedFandoms: MutedFandoms!
+  personal: Personal!
+}
+
+input NotifyOnInput {
+  administrator: AdministratorInput!
+  mutedFandoms: MutedFandomsInput!
+  personal: PersonalInput!
+}
+
+"""
+ONLINE SEGMENTS
+"""
+enum OnlineSegment {
+  DIE_HARD_FAN
+  EXPLORER
+  FAKE_FAN
+  LURKER
+  NEWBIE
+  REGULAR_FAN
+  SOCIAL_FAN
+  SOLOIST
+  SUPER_FAN
+  TAG_ALONG
+}
+
+type OnlineSegmentAudienceFilter {
+  onlineSegments: [OnlineSegment]!
+}
+
+input OnlineSegmentAudienceFilterInput {
+  onlineSegments: [OnlineSegment]!
+}
+
+type PageInfo {
+  endCursor: String!
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String!
+}
+
+"""
+# Shared types - Must match other services.
+"""
+input PaginationInput {
+  after: String
+  before: String
+  first: Int
+  last: Int
+}
+
+input ParentInput {
+  id: String!
+  parentType: ParentType!
+}
+
+enum ParentType {
+  COMMENT
+  EVENT
+  POLL
+  POST
+}
+
+type Personal {
+  comments: Boolean!
+  friends: Boolean!
+  likes: Boolean!
+  mentions: Boolean!
+  shares: Boolean!
+}
+
+input PersonalInput {
+  comments: Boolean!
+  friends: Boolean!
+  likes: Boolean!
+  mentions: Boolean!
+  shares: Boolean!
+}
+
+input PinContentInput {
+  contentId: String!
+}
+
+type PinContentPayload {
+  content: PinnedContent
+}
+
+union PinnedContent = Event | Poll | Post
+
+type PinnedFeedItemInformation {
+  source: FeedItemSourceType
+}
+
+enum PlatformMemberRole {
+  ADMINISTRATOR
+  EXTERNAL_MODERATOR
+  INTERNAL_MODERATOR
+  MEMBER
+}
+
+type Poll {
+  closed: Boolean
+  createdAt: DateTime!
+  endTime: DateTime!
+  fandom: Fandom
+  fandomMembership: FandomMember
+  hasVoted: Boolean!
+  id: String!
+  initialDuration: Duration!
+  interactions: PollInteractions!
+  options: [PollOption!]!
+  question: String!
+  remainingDuration: Duration!
+  user: User
+  visibleAt: DateTime!
+  likeReaction: LikeReaction
+  isPinned: Boolean
+  aiLabels: [AiLabel!]
+  comments(
+    after: String
+    before: String
+    filter: CommentFilterType = VISIBLE
+    first: Int = 10
+    inclusive: Boolean
+    last: Int = 0
+  ): CommentConnection
+}
+
+type PollInteractions {
+  totalVotes: Int!
+}
+
+type PollModerationInfo {
+  poll: Poll
+  visibility: EntityVisibility
+}
+
+type PollOption {
+  id: String!
+  optionName: String!
+  percentage: Int!
+  votedFor: Boolean!
+  votes: Int!
+}
+
+type Post {
+  attachments: [PostAttachment]!
+  content: String
+  createdAt: DateTime!
+  fandom: Fandom
+  fandomMembership: FandomMember
+  id: String!
+  status: PostStatus!
+  title: String
+  type: PostType!
+  updatedAt: DateTime
+  user: User
+  visibleAt: DateTime!
+  likeReaction: LikeReaction
+  isPinned: Boolean
+  aiLabels: [AiLabel!]
+  comments(
+    after: String
+    before: String
+    filter: CommentFilterType = VISIBLE
+    first: Int = 10
+    inclusive: Boolean
+    last: Int = 0
+  ): CommentConnection
+}
+
+union PostAttachment = Image | Video
+
+type PostModerationInfo {
+  post: Post
+  visibility: EntityVisibility
+}
+
+type PostSearchConnection {
+  edges: [PostSearchEdge!]!
+  pageInfo: PageInfo!
+}
+
+type PostSearchEdge {
+  cursor: String!
+  node: Post
+}
+
+type PostSearchWithFilterConnection {
+  edges: [PostSearchWithFilterEdge!]!
+  pageInfo: PageInfo!
+}
+
+type PostSearchWithFilterEdge {
+  cursor: String!
+  node: Post
+}
+
+enum PostStatus {
+  FAILED
+  ONLINE
+  PROCESSING
+}
+
+enum PostType {
+  FREEMIUM
+  TARGETED
+}
+
+type PreSignedUrl {
+  id: String!
+  url: String!
+}
+
+type PrivateChat {
+  channel: ChatChannel!
+  status: ChatStatus!
+  title: String!
+}
+
+type Product {
+  createdAt: DateTime!
+  creator: User
+  description: String!
+  id: String!
+  image: Image
+  name: String!
+  productType: ProductType!
+  status: ProductStatus!
+  updatedAt: DateTime!
+  updater: User
+  variantAttributeSummary: [AttributeSummaryItem!]!
+  variants: [Variant!]!
+}
+
+type ProductConnection {
+  edges: [ProductEdge]!
+  pageInfo: PageInfo!
+}
+
+type ProductEdge {
+  cursor: String
+  node: Product!
+}
+
+enum ProductStatus {
+  PUBLISHED
+  UNPUBLISHED
+}
+
+enum ProductType {
+  MULTI
+  SINGLE
+}
+
+enum ProfileVisibility {
+  FRIENDS
+  PRIVATE
+  PUBLIC
+}
+
+type QualityContent {
+  catalyst: String!
+  dailyChange: String!
+  score: String!
+  temporality: String!
+  thumbStopping: String!
+}
+
+type Query {
+  wallet(walletId: String!): Wallet
+  walletByDate(date: Date!, walletId: String!): WalletByDate
+  walletByDates(
+    after: String
+    before: String
+    first: Int = 10
+    last: Int
+    walletId: String!
+  ): WalletByDateConnection
+  walletByFandoms(
+    after: String
+    before: String
+    first: Int = 10
+    last: Int
+    walletId: String!
+  ): WalletByFandomConnection
+  walletTransactions(
+    after: String
+    before: String
+    first: Int = 10
+    last: Int
+    walletId: String!
+  ): WalletTransactionConnection
+  video(id: String!): Video
+  friendsOfUser(
+    after: String
+    first: Int = 10
+    userId: String!
+  ): UserConnection!
+  profile(userId: String): User
+  userByHandle(handle: String!): User
+
+  """
+  Get Campaign for id
+  """
+  campaign(id: String!): Campaign
+
+  """
+  Get Campaigns for fandom
+  """
+  campaignsForFandom(
+    after: String
+    before: String
+    fandomId: String!
+    first: Int = 10
+    last: Int
+    type: CampaignType
+  ): CampaignConnection
+
+  """
+  Get a product by id
+  """
+  product(id: String!): Product
+
+  """
+  Get all product variants of a store
+  """
+  productVariants(
+    after: String
+    before: String
+    first: Int = 10
+    last: Int
+    storeId: String!
+  ): VariantConnection
+
+  """
+  Get all products of a store
+  """
+  products(
+    after: String
+    before: String
+    first: Int = 10
+    last: Int
+    storeId: String!
+  ): ProductConnection!
+
+  """
+  Get a store by fandomId
+  """
+  storeByFandom(fandomId: String!): StorePayload
+  memberInviteLink(source: String): MemberInviteLink
+  searchContent(
+    after: String
+    first: Int = 10
+    term: String!
+  ): ContentSearchConnection!
+  searchFandoms(
+    after: String
+    first: Int = 10
+    term: String!
+  ): FandomSearchConnection!
+  searchMyFandoms(
+    admin_only: Boolean = false
+    after: String
+    first: Int = 10
+    term: String
+  ): MyFandomSearchConnection!
+  searchPosts(
+    after: String
+    first: Int = 10
+    term: String!
+  ): PostSearchConnection!
+  searchPostsWithFilter(
+    after: String
+    endDate: String!
+    fandomId: String!
+    first: Int = 10
+    startDate: String!
+  ): PostSearchWithFilterConnection!
+  searchUsers(
+    after: String
+    first: Int = 10
+    term: String!
+  ): UserSearchConnection!
+
+  """
+  Get reputation scores for each of user's fandoms. @since v2
+  """
+  allFandomMemberReputations(
+    after: String
+    before: String
+    first: Int = 10
+    input: AllFandomMemberReputationsInput!
+    last: Int
+  ): FandomMemberReputationConnectionV2!
+
+  """
+  Get member reputation score for a fandom member on a specific date
+  """
+  fandomMemberReputation(
+    input: FandomMemberReputationInput!
+  ): FandomMemberReputation @deprecated(reason: "use v2 queries")
+
+  """
+  Get historical fandom member reputation score
+  """
+  fandomMemberReputationHistory(
+    input: FandomMemberReputationHistoryInput!
+  ): FandomMemberReputationConnection @deprecated(reason: "use v2 queries")
+
+  """
+  Get reputation for a user and fandom at a specific date. @since v2
+  """
+  fandomMemberReputationV2(
+    input: FandomMemberReputationInput!
+  ): FandomMemberReputationV2
+
+  """
+  Get fandom reputation score on a specific date
+  """
+  fandomReputation(input: FandomReputationInput!): FandomReputation
+    @deprecated(reason: "use v2 queries")
+
+  """
+  Get historical fandom reputation score
+  """
+  fandomReputationHistory(
+    input: FandomReputationHistoryInput!
+  ): FandomReputationConnection @deprecated(reason: "use v2 queries")
+  reactableLikeReactions(
+    after: String
+    before: String
+    first: Int = 10
+    last: Int
+    reactableId: String!
+    reactableType: ReactableType!
+  ): ReactionConnection
+  userLikeReactions(
+    after: String
+    before: String
+    first: Int = 10
+    last: Int
+  ): ReactionConnection
+  post(id: String!): Post
+  poll(id: String!): Poll
+
+  """
+  Get appeal info of the entity
+  """
+  moderationAppealInfo(input: ModerationAppealInfoInput!): ModerationAppealInfo
+
+  """
+  Get number of pending moderation jobs
+  """
+  moderationCounters(
+    filter: ModerationCountersFilter!
+  ): ModerationCountersPayload
+
+  """
+  Get latest moderation job for the given entity
+  """
+  moderationJobByEntityId(
+    """
+    The id of the entity associated with the moderation job
+    """
+    entityId: String!
+  ): ModerationJob
+
+  """
+  Get the list of reported entities to moderate by Aaqua
+  """
+  moderationJobs(
+    after: String
+    before: String
+    filter: ModerationJobsFilter
+    first: Int
+    last: Int
+  ): ModerationJobsConnection
+
+  """
+  Get the number of moderation job corresponding to a filter
+  If the count is greater than 99 returns '99+'
+  """
+  moderationJobsCount(filter: ModerationJobsFilter): String!
+
+  """
+  Get approximate number of pending and reviewed moderation jobs
+  """
+  moderationJobsCounters: ModerationJobsCountersPayload
+
+  """
+  For a given job: Additional text notes that were provided by users when reporting the entity
+  """
+  reportNotes(
+    after: String
+    before: String
+    first: Int
+    jobId: String!
+    last: Int
+  ): ReportNoteConnection
+
+  """
+  For a given job: Get the list of reporters appeal notes
+  """
+  reporterAppealNotes(
+    after: String
+    before: String
+    first: Int
+    jobId: String!
+    last: Int
+  ): AppealNoteConnection
+  livestreamByAuthenticatedUser: LivestreamByAuthenticatedUser
+  livestreamByFandomId(fandomId: String): Livestream
+  livestreamById(id: String): Livestream
+  livestreamByUserId(userId: String): Livestream
+  livestreamQuestions(
+    after: String
+    first: Int
+    livestreamId: String!
+  ): LivestreamQuestions
+    @deprecated(
+      reason: "there was no connection layer; use livestreamQuestionsPaged"
+    )
+  livestreamQuestionsConnection(
+    after: String
+    first: Int
+    livestreamId: String!
+  ): LivestreamQuestionsConnection
+  livestreamTopQuestions(livestreamId: String!): LivestreamQuestions
+  livestreamViewers(
+    after: String
+    first: Int
+    livestreamId: String
+  ): LivestreamViewerConnection
+  livestreams(after: String, first: Int): LivestreamConnection
+  inbox(after: String, first: Int = 10): InboxNotificationConnection!
+  inboxConfiguration: InboxConfiguration!
+  image(id: String!): Image
+
+  """
+  Get community admin feeds
+  """
+  communityAdminFeed(
+    after: String
+    before: String
+    fandomId: String!
+    filter: FeedFilter!
+
+    """
+    The number of items to retrieve, maximum 25 items are allowed
+    """
+    first: Int = 10
+
+    """
+    The number of items to retrieve, maximum 25 items are allowed
+    """
+    last: Int
+  ): FeedItemConnection
+
+  """
+  Get community feeds
+  """
+  communityFeed(
+    after: String
+    before: String
+    fandomId: String!
+    filter: FeedFilter!
+
+    """
+    The number of items to retrieve, maximum 25 items are allowed
+    """
+    first: Int = 10
+
+    """
+    The number of items to retrieve, maximum 25 items are allowed
+    """
+    last: Int
+  ): FeedItemConnection
+
+  """
+  Get event feed
+  """
+  eventFeed(
+    after: String
+    before: String
+    fandomId: String!
+    filter: FeedFilter!
+
+    """
+    The number of items to retrieve, maximum 25 items are allowed
+    """
+    first: Int = 10
+
+    """
+    The number of items to retrieve, maximum 25 items are allowed
+    """
+    last: Int
+  ): FeedItemConnection
+
+  """
+  Get explore feed
+  """
+  exploreFeed(
+    after: String
+    before: String
+    filter: FeedFilter!
+
+    """
+    The number of items to retrieve, maximum 25 items are allowed
+    """
+    first: Int = 10
+
+    """
+    The number of items to retrieve, maximum 25 items are allowed
+    """
+    last: Int
+  ): HighlightsFromCommunityConnection
+
+  """
+  Get home feed
+  """
+  homeFeedHighlights(
+    after: String
+    before: String
+    filter: FeedFilter!
+
+    """
+    The number of items to retrieve, maximum 25 items are allowed
+    """
+    first: Int = 10
+
+    """
+    The number of items to retrieve, maximum 25 items are allowed
+    """
+    last: Int
+  ): HighlightsFromCommunityConnection
+  homeFeedSections(filter: HomeFeedSectionsFilter!): HomeFeedSectionConnection
+
+  """
+  Get profile/user feeds
+  """
+  profileFeed(
+    after: String
+    before: String
+    filter: FeedFilter!
+
+    """
+    The number of items to retrieve, maximum 25 items are allowed
+    """
+    first: Int = 10
+
+    """
+    The number of items to retrieve, maximum 25 items are allowed
+    """
+    last: Int
+    userId: String!
+  ): FeedItemConnection
+  fandom(fandomId: String!): Fandom
+  fandomByHandle(handle: String!): Fandom
+  fandomThemesList: [FandomTheme!]!
+    @deprecated(
+      reason: "Deprecated from api v7. Theme functionality removed in app build 1.31.0"
+    )
+
+  """
+   This directive should be moved to the PaginationInput argument and uncommented when this isn't supported in the spec.
+   cf. https://github.com/graphql/graphql-spec/pull/805
+  @deprecated(reason: "deprecated argument PaginationInput from v6, use unpacked arguments instead")
+  """
+  fandoms(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    pagination: PaginationInput
+  ): FandomConnection
+  event(id: String!): Event
+  comment(commentId: String!): Comment
+  chatByEventId(eventId: String!): EventChat
+  chatByFandomId(fandomId: String!): FandomChat
+  chatByLivestreamId(livestreamId: String!): LivestreamChat
+  chatToken: ChatToken
+
+  """
+  Get badges collected and uncollected by user.
+
+  If `badgeType` is not specified, retrieves all badges
+  If `badgeType` is COMMUNITY, `fandomId` should be specified
+  If `badgeType` is GLOBAL, `fandomId` will be ignored
+  """
+  badges(
+    after: String
+    badgeAwardStatus: BadgeAwardStatus = ALL
+    badgeType: BadgeType
+    before: String
+    fandomId: String
+    first: Int = 10
+    last: Int
+    userId: String!
+  ): BadgeConnection!
+  suggestFandoms(
+    after: String
+    first: Int = 10
+    term: String!
+  ): FandomSuggestionConnection!
+  suggestUsers(
+    after: String
+    first: Int = 10
+    term: String!
+  ): UserSuggestionConnection!
+}
+
+input QuestionIdInput {
+  questionId: String!
+}
+
+union Reactable = Comment | Event | Poll | Post
+
+enum ReactableType {
+  COMMENT
+  EVENT
+  POLL
+  POST
+}
+
+type Reaction {
+  id: String!
+  likeInfo: LikeInformation
+  reactable: Reactable
+  user: User
+}
+
+type ReactionConnection {
+  edges: [ReactionEdge]!
+  pageInfo: PageInfo!
+}
+
+type ReactionEdge {
+  cursor: String!
+  node: Reaction!
+}
+
+type RecommendedFeedItemInformation {
+  source: FeedItemSourceType
+}
+
+input RegisterPushNotificationTokenInput {
+  """
+  app bundle id
+  """
+  deviceInstanceId: String!
+  pushNotificationToken: String!
+  source: String!
+}
+
+type RegisterPushNotificationTokenPayload {
+  """
+  app bundle id
+  """
+  deviceInstanceId: String!
+  pushNotificationToken: String!
+  source: String!
+}
+
+type RegularFeedItemInformation {
+  source: FeedItemSourceType
+}
+
+input RejectFriendRequestInput {
+  userId: String!
+}
+
+type RejectFriendRequestPayload {
+  user: User
+}
+
+input RejectJoinHiddenFandomInput {
+  fandomId: String!
+}
+
+type RejectJoinHiddenFandomPayload {
+  fandomId: String
+  roles: [FandomMemberRole!]
+  status: FandomMemberStatus
+  user: User
+}
+
+input RejectJoinPrivateFandomInput {
+  fandomId: String!
+  userId: String!
+}
+
+type RejectJoinPrivateFandomPayload {
+  member: FandomMember!
+}
+
+input RemoveFandomAdminInput {
+  fandomId: String!
+  userId: String!
+}
+
+type RemoveFandomAdminPayload {
+  member: FandomMember!
+}
+
+input RemoveFandomMemberInput {
+  fandomId: String!
+  userId: String!
+}
+
+type RemoveFandomMemberPayload {
+  member: FandomMember!
+}
+
+input RemovePlatformMemberRoleInput {
+  roles: [PlatformMemberRole!]!
+  userId: String!
+}
+
+type RemovePlatformMemberRolePayload {
+  user: User
+}
+
+"""
+The counters associated to the violation reasons for reporting an entity.
+"""
+type ReportCount {
+  """
+  The number of violation reports made for the associated reason since the entity creation.
+  """
+  count: Int!
+
+  """
+  The report reason the counters are associated with
+  """
+  reportReason: String
+}
+
+input ReportEntityByMemberInput {
+  """
+  The additional notes the reporter can provide the moderators to assist in their review.
+  """
+  additionalNote: String
+
+  """
+  The id of the reported user created content.
+  """
+  entityId: String!
+
+  """
+  The type of moderator the reporter wants the content to be reviewed by.
+  """
+  moderatorType: ModeratorType
+
+  """
+  The reason for the report to assist the moderators in their review. Must match: [A-Z_]{1,40}
+  """
+  reportReason: String
+}
+
+type ReportEntityByMemberPayload {
+  entityId: String
+}
+
+type ReportersAppealInfo {
+  """
+  Counter of total appeals made by reporters
+  """
+  count: Int!
+}
+
+type ReportInfo {
+  """
+  List of reports provided by AI content analysis
+  """
+  aiReports: [AiReport!]!
+
+  """
+  The number of reports per violation reason.
+  """
+  reportCounts: [ReportCount!]!
+
+  """
+  Counter of total text notes that members provided when they reported this job
+  """
+  reportNotesCount: Int
+
+  """
+  The number of reports made by unique members (excluding reports for other jobs linked to the same entity)
+  """
+  totalReportCount: Int!
+}
+
+type ReportNote {
+  date: String!
+  reportReason: String
+  text: String!
+  user: User
+}
+
+type ReportNoteConnection {
+  edges: [ReportNoteEdge]!
+  pageInfo: PageInfo!
+}
+
+type ReportNoteEdge {
+  cursor: String
+  node: ReportNote
+}
+
+type ReportResponseNotification implements InboxNotification {
+  acknowledged: Boolean!
+  composition: InboxComposition
+  confirmed: Boolean!
+  fandom: Fandom
+  feedItem: InboxFeedItem
+  id: String!
+  inReplyTo: InboxComposition
+  moderatedByAaqua: Boolean!
+  read: Boolean!
+  time: String!
+}
+
+input ReportUserInput {
+  """
+  Some additional notes to provide the Aaqua admin with when reviewing the user.
+  """
+  additionalNote: String
+
+  """
+  Report reason, should match [A-Z_]{1,40}
+  """
+  reportReason: String
+
+  """
+  The reported user.
+  """
+  userId: String!
+}
+
+type ReportUserPayload {
+  """
+  The reported user.
+  """
+  user: User
+}
+
+type ReputationScoreAudienceFilter {
+  maxReputationScore: Int
+  minReputationScore: Int
+}
+
+input ReputationScoreAudienceFilterInput {
+  maxReputationScore: Int
+  minReputationScore: Int = 0
+}
+
+input RequestJoinPrivateFandomInput {
+  fandomId: String!
+}
+
+type RequestJoinPrivateFandomPayload {
+  member: FandomMember
+}
+
+input ResetUserProfileInput {
+  """
+  Internal note provided by moderator to explain the decision made.
+  """
+  internalNote: String
+
+  """
+  The id of the user for which the profile needs to be reset.
+  """
+  userId: String!
+
+  """
+  Violation identified by the moderator when deciding to reset the user's profile, should match [A-Z_]{1,40}
+  """
+  violationType: String
+}
+
+"""
+Payload returned when a user's profile is reset.
+"""
+type ResetUserProfilePayload {
+  """
+  The reviewed moderation job associated to the user.
+  """
+  moderationJob: ModerationJob!
+}
+
+input ReviewAiLabelsInput {
+  aiLabelsInput: [AiLabelsInput!]!
+
+  """
+  ID of the moderate-able entity (post, comment, poll, event)
+  """
+  entityId: String!
+}
+
+type ReviewAiLabelsPayload {
+  entityId: String!
+}
+
+input ReviewUserModerationJobInput {
+  """
+  Internal note provided by moderator to explain the decision made.
+  """
+  internalNote: String
+
+  """
+  The id of the user for which the moderation job needs to be reviewed without any action.
+  """
+  userId: String!
+}
+
+"""
+Payload returned when a moderation job associated to a user is reviewed without taking any action.
+"""
+type ReviewUserModerationJobPayload {
+  """
+  The reviewed moderation job associated to the user.
+  """
+  moderationJob: ModerationJob!
+}
+
+input RuleInput {
+  description: String!
+  name: String!
+}
+
+type ScoreComponents {
+  mi: MeaningfulInteractions!
+  qc: QualityContent!
+}
+
+input ShareFandomInput {
+  content: String
+  fandom: String!
+  recipients: [String!]!
+}
+
+type ShareFandomPayload {
+  content: String
+  fandom: Fandom
+  id: String!
+  recipients: [User]!
+}
+
+"""
+scalar _FieldSet
+directive @external on FIELD_DEFINITION
+directive @key(fields: _FieldSet!) on OBJECT | INTERFACE
+directive @extends on OBJECT | INTERFACE
+ FandomChat
+ Start FandomChat
+"""
+input StartFandomChatInput {
+  fandomId: String!
+  title: String!
+}
+
+type StartFandomChatPayload {
+  chat: FandomChat!
+}
+
+input StartLivestreamChatInput {
+  fandomId: String!
+  livestreamId: String!
+}
+
+type StartLivestreamChatPayload {
+  chat: LivestreamChat!
+}
+
+"""
+INPUTS
+HOST
+"""
+input StartLivestreamInput {
+  description: String
+  fandomId: String!
+  notificationsEnabled: Boolean
+  thumbnailImageId: String!
+  title: String!
+
+  """
+  @deprecated(reason: "ignored")
+  """
+  userId: String
+}
+
+"""
+OUTPUTS
+HOST
+"""
+type StartLivestreamPayload {
+  ingestServer: IngestServer
+  livestream: Livestream
+  message: String
+  status: LivestreamMutationStatus!
+}
+
+"""
+PrivateChat
+Start PrivateChat
+"""
+input StartPrivateChatInput {
+  context: ChatContext
+  with: String!
+}
+
+type StartPrivateChatPayload {
+  chat: PrivateChat!
+}
+
+input StopLivestreamInput {
+  livestreamId: String!
+  reason: StopLivestreamReason
+
+  """
+  @deprecated(reason: "ignored")
+  """
+  userId: String
+}
+
+type StopLivestreamPayload {
+  message: String
+  status: LivestreamMutationStatus!
+}
+
+enum StopLivestreamReason {
+  OTHER
+  STREAM_ENDED_BY_USER
+}
+
+"""
+Store - Represents a fandom store/shop
+
+Not all fields are mandatory now due to backwards compatibility
+Once shop v1 is deprecated, the following fields should be made mandatory for both `type` and `input`
+- storeUrlTitle
+- email
+- contactCountryCode
+- contactNumber
+- currency
+"""
+type Store {
+  active: Boolean!
+  contactCountryCode: String
+  contactNumber: String
+  content: String!
+  createdAt: DateTime!
+  creator: User
+  ctaImg: Image
+  currency: String
+  email: String
+  fandom: Fandom
+  id: String!
+  storeUrl: String!
+  storeUrlTitle: String
+  tags: [String!]
+  title: String!
+  updatedAt: DateTime
+  updater: User
+}
+
+enum StoreMutationStatus {
+  FAIL
+  SUCCESS
+}
+
+type StorePayload {
+  status: StoreStatus!
+  store: Store
+}
+
+enum StoreStatus {
+  ACTIVE
+  DISABLED
+  INACTIVE
+}
+
+enum SupportedFileTypes {
+  BMP
+  GIF
+  JFI
+  JFIF
+  JIF
+  JPE
+  JPEG
+  JPG
+  PNG
+  SVG
+  TIF
+  TIFF
+}
+
+enum SupportedVideoFileTypes {
+  M4A
+  M4B
+  M4P
+  M4R
+  M4V
+  MOV
+  MP4
+  QT
+}
+
+input SuspendUserInput {
+  """
+  The duration of the suspension (in hours). User will be automatically unsuspended after that duration.
+  """
+  durationInHours: Int!
+
+  """
+  Internal note provided by moderator to explain the decision made.
+  """
+  internalNote: String
+
+  """
+  The id of the user to suspend.
+  """
+  userId: String!
+
+  """
+  Violation identified by the moderator when deciding to suspend the user, should match [A-Z_]{1,40}
+  """
+  violationType: String
+}
+
+"""
+Payload returned when a user is suspended.
+"""
+type SuspendUserPayload {
+  """
+  The reviewed moderation job associated to the user.
+  """
+  moderationJob: ModerationJob!
+}
+
+type TargetedFeedItemInformation {
+  source: FeedItemSourceType
+}
+
+union TopParentEntity = Event | Poll | Post
+
+"""
+Note: VOUCHER is being used for testing purpose only (for now)
+"""
+enum TransactionType {
+  BURN
+  CONTRIBUTION
+  MINT
+  VOUCHER
+}
+
+type TriggerSpecification {
+  fandomJoinedSinceTriggerFilter: FandomJoinedSinceTriggerFilter
+  fandomJoinedTriggerFilter: FandomJoinedTriggerFilter
+  fandomVisitedTriggerFilter: FandomVisitedTriggerFilter
+}
+
+input TriggerSpecificationInput {
+  fandomJoinedSinceTriggerFilter: FandomJoinedSinceTriggerFilterInput
+  fandomJoinedTriggerFilter: FandomJoinedTriggerFilterInput
+  fandomVisitedTriggerFilter: FandomVisitedTriggerFilterInput
+}
+
+input UndoFriendshipRequestInput {
+  userId: String!
+}
+
+type UndoFriendshipRequestPayload {
+  user: User
+}
+
+input UnlikeReactionInput {
+  reactableId: String!
+  reactableType: ReactableType!
+}
+
+type UnlikeReactionPayload {
+  reaction: LikeReaction!
+}
+
+input UnpinContentInput {
+  contentId: String!
+}
+
+type UnpinContentPayload {
+  content: PinnedContent
+}
+
+input UnregisterPushNotificationTokenInput {
+  """
+  app bundle id
+  """
+  deviceInstanceId: String!
+  source: String!
+}
+
+type UnregisterPushNotificationTokenPayload {
+  """
+  app bundle id
+  """
+  deviceInstanceId: String!
+  pushNotificationToken: String
+  source: String!
+}
+
+input UpdateCampaignInput {
+  """
+  CampaignId
+  """
+  campaignId: String!
+
+  """
+  New endTime (null if no endtime shoudl be used)
+   ISO-8601
+  """
+  endTime: DateTime
+
+  """
+  New campaignItem (if null original item will be used)
+  """
+  item: CampaignItemInput
+
+  """
+  All active campaign specifications
+  """
+  specifications: [CampaignSpecificationInput!]!
+
+  """
+  New startTime (null if no starttime should be used)
+   ISO-8601
+  """
+  startTime: DateTime
+
+  """
+  New campaignType (if null original type will be used)
+  """
+  type: CampaignType
+}
+
+type UpdateCampaignPayload {
+  campaign: Campaign
+}
+
+input UpdateCommentInput {
+  content: String!
+  id: String!
+}
+
+type UpdateCommentPayload {
+  comment: Comment!
+}
+
+"""
+Important: Temporarily remove these two properties:
+  - addAttachments: [EventAttachmentInput]!
+  - removeAttachments: [EventAttachmentInput]!
+
+To support edit event action without complicated about attachments updates
+"""
+input UpdateEventInput {
+  content: String!
+  endTime: ZonedDateTime!
+  eventId: String!
+  location: EventLocationInput!
+  startTime: ZonedDateTime!
+  ticketUrl: String
+  title: String!
+  visibleAt: DateTime
+}
+
+input UpdateEventPartialInput {
+  content: EventPartialContentInput
+  endTime: EventPartialEndTimeInput
+  eventId: String!
+  location: EventPartialLocationInput
+  startTime: EventPartialStartTimeInput
+  ticketUrl: EventPartialTicketUrlInput
+  title: EventPartialTitleInput
+  visibleAt: EventPartialVisibleAtInput
+}
+
+type UpdateEventPartialPayload {
+  event: Event!
+}
+
+type UpdateEventPayload {
+  event: Event!
+}
+
+input UpdateFandomInput {
+  fandomId: String!
+  handle: String
+  hashtags: [String!]
+  logoImageId: String
+  name: String
+
+  """
+  @deprecated(reason: "Deprecated from api v7. Theme functionality removed in app build 1.31.0")
+  """
+  rules: [RuleInput!]
+  summary: String
+
+  """
+  This directive should be uncommented when it is supported in the spec.
+  cf. https://github.com/graphql/graphql-spec/pull/805
+  """
+  themeId: String
+}
+
+type UpdateFandomPayload {
+  fandom: Fandom!
+}
+
+input UpdatePostInput {
+  addAttachments: [AttachmentInput]!
+  content: String
+  postId: String!
+  removeAttachments: [AttachmentInput]!
+  title: String
+  visibleAt: DateTime
+}
+
+type UpdatePostPayload {
+  post: Post!
+}
+
+"""
+Updating the `productType` is not supported at the moment.
+`variants` field will be validated to have exactly 1 item for SINGLE
+"""
+input UpdateProductInput {
+  description: String!
+  id: String!
+  name: String!
+  productType: ProductType
+  status: ProductStatus!
+  variants: [UpdateVariantInput!]
+}
+
+type UpdateProductPayload {
+  error: EntityError
+  message: String @deprecated(reason: "Use `error` field instead")
+  product: Product
+  status: StoreMutationStatus! @deprecated(reason: "Use `error` field instead")
+}
+
+input UpdateProductStatusInput {
+  id: String!
+  status: ProductStatus!
+}
+
+input UpdateStoreInput {
+  active: Boolean!
+  contactCountryCode: String
+  contactNumber: String
+  content: String!
+  ctaImgId: String!
+  currency: String
+  email: String
+  fandomId: String!
+  storeUrl: String!
+  storeUrlTitle: String
+  tags: [String!]
+  title: String!
+}
+
+type UpdateStorePayload {
+  error: EntityError
+  message: String @deprecated(reason: "Use `error` field instead")
+  status: StoreMutationStatus! @deprecated(reason: "Use `error` field instead")
+  store: Store
+}
+
+input UpdateUserProfileInput {
+  bio: String
+  coverImageId: String
+  coverImageUrl: String
+  dateOfBirth: String
+  handle: String
+  name: String
+  profilePictureId: String
+  profilePictureUrl: String
+  realName: String
+  tags: [String!]
+  visibility: ProfileVisibility
+}
+
+type UpdateUserProfilePayload {
+  user: User
+}
+
+input UpdateVariantInput {
+  attributes: [VariantAttributeInput!]
+  externalUrl: String!
+  id: String!
+  imageIds: [String!]!
+  label: VariantLabel!
+  price: Float!
+  productId: String!
+  salePrice: Float
+  saleValidFrom: DateTime
+  saleValidTo: DateTime
+  sku: String
+}
+
+input UpdateVariantLabelInput {
+  label: VariantLabel!
+  productId: String!
+  variantId: String!
+}
+
+type UpdateVariantPayload {
+  error: EntityError
+  message: String @deprecated(reason: "Use `error` field instead")
+  status: StoreMutationStatus! @deprecated(reason: "Use `error` field instead")
+  variant: Variant
+}
+
+type UploadImage {
+  cdnUrl: String! @deprecated(reason: "use image instead")
+  contentType: String! @deprecated(reason: "use image instead")
+  id: String! @deprecated(reason: "use image instead")
+  image: Image!
+  url: String!
+}
+
+input UploadImageInput {
+  fileType: SupportedFileTypes!
+}
+
+input UploadVideoInput {
+  fileName: String
+
+  """
+  deprecated(reason: "Use `fileType`.")
+  """
+  fileType: SupportedVideoFileTypes
+}
+
+type UploadVideoPayload {
+  url: String!
+  video: Video!
+}
+
+type User {
+  bio: String
+  coverImage: Image
+  coverImageUrl: String @deprecated
+
+  """
+  ISO-8601
+  """
+  dateOfBirth: Date
+  deleted: Boolean!
+  email: String
+  friendCount: Int
+  friendshipStatus: FriendshipStatus
+  handle: String!
+  id: String!
+  identified: Boolean!
+  name: String
+  pendingVerification: Boolean! @deprecated(reason: "from: v6")
+  phone: String
+  platformMemberRoles: [PlatformMemberRole!]
+  profilePicture: Image
+  profilePictureUrl: String @deprecated
+  realName: String
+
+  """
+  Included in v2+ api, but Image only resolvable in v3+ so don't use it in v2.
+  """
+  tagsList: [String!]
+  visibility: ProfileVisibility
+  livestream: Livestream
+
+  """
+  @deprecated(reason: "deprecated argument PaginationInput from v6, use unpacked arguments instead")
+  """
+  fandomsAdminOf(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    pagination: PaginationInput
+  ): FandomConnection
+
+  """
+  @deprecated(reason: "deprecated argument PaginationInput from v6, use unpacked arguments instead")
+  """
+  fandomsMemberOf(
+    after: String
+    before: String
+    first: Int
+    last: Int
+    pagination: PaginationInput
+  ): FandomConnection
+  fandomsMemberOfCount: Int
+  membershipOfFandom(fandomId: String!): FandomMember
+
+  """
+  Fetch badges of this user. By default it gets the global awarded badges.
+  Does not support pagination at the moment
+  """
+  badges(
+    after: String
+    badgeAwardStatus: BadgeAwardStatus = AWARDED
+    before: String
+    first: Int = 10
+    last: Int
+  ): BadgeConnection
+}
+
+type UserConnection {
+  edges: [UserEdge!]!
+  pageInfo: PageInfo!
+}
+
+type UserEdge {
+  cursor: String!
+  node: User!
+}
+
+enum UserEventReply {
+  GOING
+  MAYBE
+  NOT_GOING
+}
+
+input UserEventResponseInput {
+  eventId: String!
+  userReply: UserEventReply!
+}
+
+type UserEventResponsePayload {
+  event: Event!
+}
+
+type UserMentionNotification implements InboxNotification {
+  acknowledged: Boolean!
+  composition: InboxComposition
+  fandom: Fandom
+  feedItem: InboxFeedItem
+  id: String!
+  inReplyTo: InboxComposition
+  mention: User
+  mentioner: User
+  read: Boolean!
+  time: String!
+}
+
+type UserModerationInfo {
+  user: User
+}
+
+type UserSearchConnection {
+  edges: [UserSearchEdge!]!
+  pageInfo: PageInfo!
+}
+
+type UserSearchEdge {
+  cursor: String!
+  node: User
+}
+
+type UserSuggestionConnection {
+  edges: [UserSuggestionEdge!]!
+  pageInfo: PageInfo!
+}
+
+type UserSuggestionEdge {
+  cursor: String!
+  node: User
+}
+
+type Variant {
+  attributes: [VariantAttribute!]!
+  createdAt: DateTime!
+  creator: User
+  externalUrl: String
+  id: String!
+  images: [Image]!
+  label: VariantLabel!
+  name: String
+  price: Float
+  product: Product!
+  salePrice: Float
+  saleValidFrom: DateTime
+  saleValidTo: DateTime
+  sku: String
+  updatedAt: DateTime!
+  updater: User
+}
+
+type VariantAttribute {
+  name: String!
+  value: String!
+}
+
+input VariantAttributeInput {
+  name: String!
+  value: String!
+}
+
+type VariantConnection {
+  edges: [VariantEdge]!
+  pageInfo: PageInfo!
+}
+
+type VariantEdge {
+  cursor: String
+  node: Variant!
+}
+
+enum VariantLabel {
+  NEW
+  NONE
+  SALE
+  UNAVAILABLE
+}
+
+type Video {
+  coverImageUrl: String
+  height: Int
+  heigth: Int @deprecated(reason: "field has typo")
+  id: String!
+  online: Boolean! @deprecated(reason: "use status instead")
+  ratio: String
+  status: VideoStatus!
+  statusRemarks: String
+  videoUrl: String
+  width: Int
+  aiLabels: [AiLabel!]
+}
+
+enum VideoStatus {
+  NORMALISATION_FAILED
+  ONLINE
+  PENDING
+  PROCESSING_FAILED
+  VALIDATION_FAILED
+}
+
+input VideoUploadInput {
+  fileType: SupportedVideoFileTypes!
+}
+
+type Viewers {
+  list: [User]
+  viewerCount: Int
+}
+
+"""
+Wallet
+"""
+type Wallet {
+  balance: Float!
+  fandom: Fandom
+  id: String!
+  lastUpdate: DateTime!
+  user: User
+}
+
+"""
+Wallet latest state by Date
+"""
+type WalletByDate {
+  balance: Float!
+  date: Date!
+  lastUpdate: DateTime!
+  transactions: [TransactionType!]!
+  wallet: Wallet!
+}
+
+type WalletByDateConnection {
+  edges: [WalletByDateEdge]
+  pageInfo: PageInfo!
+}
+
+type WalletByDateEdge {
+  cursor: String
+  node: WalletByDate
+}
+
+"""
+Wallet total credit by Fandom
+"""
+type WalletByFandom {
+  fandom: Fandom
+  lastUpdate: DateTime!
+  totalCredit: Float!
+  wallet: Wallet!
+}
+
+type WalletByFandomConnection {
+  edges: [WalletByFandomEdge]
+  pageInfo: PageInfo!
+}
+
+type WalletByFandomEdge {
+  cursor: String
+  node: WalletByFandom
+}
+
+type WalletMetadata {
+  key: String!
+  value: String!
+}
+
+"""
+Wallet Transaction
+"""
+type WalletTransaction {
+  amount: Float!
+  balance: Float!
+  dateTime: DateTime!
+  entryType: EntryType!
+  fandom: Fandom
+  metadata: [WalletMetadata!]!
+  transactionType: TransactionType!
+  wallet: Wallet!
+}
+
+type WalletTransactionConnection {
+  edges: [WalletTransactionEdge]
+  pageInfo: PageInfo!
+}
+
+type WalletTransactionEdge {
+  cursor: String
+  node: WalletTransaction
+}
+
+type WebsocketChannel {
+  cipherKey: String!
+  id: String!
+}
+
+enum WebsocketChannelMessageType {
+  ENTITY
+  PRESENCE
+}
+
+enum WebsocketEntityType {
+  COMMENT
+  FANDOM
+  INBOX
+  INBOX_NOTIFICATION
+  LIVESTREAM
+  POST
+}
+
+type WebsocketEvent {
+  entityType: WebsocketEntityType!
+  eventType: WebsocketEventType!
+  id: String!
+}
+
+enum WebsocketEventType {
+  CREATE
+  DELETE
+  UPDATE
+}
+
+type WebsocketPresence {
+  presenceCount: Int!
+}
+
+scalar ZonedDateTime

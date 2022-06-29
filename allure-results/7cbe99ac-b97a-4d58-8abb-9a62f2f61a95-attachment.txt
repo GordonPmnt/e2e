@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: PostEntityInfo {
+    _entityId: [32m'7dd0abc4-e5b1-43fa-933e-4d089097fcb2'[39m,
+    _entityType: [32m'POST'[39m,
+    _entityContent: [32m'Granite Loan Avon 1654864340111'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'b413f82b-12e7-4fae-9fce-7a5007db7f63'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'Pants microchip Agent Carolina Nevada 1654864341872'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  attachment: [90mundefined[39m
+}

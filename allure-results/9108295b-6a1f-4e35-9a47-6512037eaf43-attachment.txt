@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: PostEntityInfo {
+    _entityId: [32m'e4858121-88fa-42b7-b970-d6bb37e56f2c'[39m,
+    _entityType: [32m'POST'[39m,
+    _entityContent: [32m'seamless virtual iterate 1654686545215'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'9d799ef0-a5f5-42b6-a517-0d2a74389d28'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'payment hack back gold Springs 1654686546879'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  attachment: [90mundefined[39m
+}

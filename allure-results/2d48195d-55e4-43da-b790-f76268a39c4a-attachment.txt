@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: PostEntityInfo {
+    _entityId: [32m'e62fac01-c070-4eeb-a9c6-689c1de2a2fe'[39m,
+    _entityType: [32m'POST'[39m,
+    _entityContent: [32m'Berkshire Track Sports 1654682110329'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'da498f64-f690-4c91-b4bd-eed406254644'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'Berkshire Village Loan Bacon Ruble 1654682112083'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  attachment: [90mundefined[39m
+}

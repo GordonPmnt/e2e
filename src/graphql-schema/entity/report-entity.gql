@@ -1,0 +1,5 @@
+mutation ReportEntityMutation($input: ReportEntityByMemberInput!) {
+  reportEntityByMember(input: $input) {
+    entityId
+  }
+}

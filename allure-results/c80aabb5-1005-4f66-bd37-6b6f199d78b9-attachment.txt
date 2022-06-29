@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: EventEntityInfo {
+    _entityId: [32m'78fe0f6a-e1ad-48fe-9df5-0c509762ef75'[39m,
+    _entityType: [32m'EVENT'[39m,
+    _entityContent: [32m'Shirt channels 1654866023946'[39m,
+    _author: [32m'MOD_ADMIN'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'4be3ae7f-8dcc-4afb-9ac4-2e3c9984bc3a'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'intangible Benin Granite paradigm Kwacha 1654866025613'[39m,
+    _author: [32m'MOD_ADMIN'[39m
+  },
+  attachment: [90mundefined[39m
+}

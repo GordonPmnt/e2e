@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [90mundefined[39m,
+  _reportedReason: [32m''[39m,
+  mainContent: PostEntityInfo {
+    _entityId: [32m'aba2cf22-fda5-4fa0-a421-9b917c04a38d'[39m,
+    _entityType: [32m'POST'[39m,
+    _entityContent: [32m'Tuna contingency Handmade 1654682430140'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'fe66d7ee-c0d9-4a30-bbab-0f65d93046b5'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'You are retarded'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  attachment: [90mundefined[39m
+}

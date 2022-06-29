@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: EventEntityInfo {
+    _entityId: [32m'f721fb07-a61f-4308-b01f-7d0a9619b41f'[39m,
+    _entityType: [32m'EVENT'[39m,
+    _entityContent: [32m'Bedfordshire copy 1654682458281'[39m,
+    _author: [32m'MOD_ADMIN'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'271389c5-dc16-47ea-95b6-52eb9f70b1e9'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'Borders Bolivia deposit ADP Monitored 1654682459947'[39m,
+    _author: [32m'MOD_ADMIN'[39m
+  },
+  attachment: [90mundefined[39m
+}

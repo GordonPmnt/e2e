@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: EventEntityInfo {
+    _entityId: [32m'bc728f7d-3bee-4734-a370-08cf22bc6ce4'[39m,
+    _entityType: [32m'EVENT'[39m,
+    _entityContent: [32m'Viaduct Metal 1654682138907'[39m,
+    _author: [32m'MOD_ADMIN'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'1624065d-367d-4e5f-ae1b-6f77817a76f3'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'web toolset Frozen feed and 1654682140726'[39m,
+    _author: [32m'MOD_ADMIN'[39m
+  },
+  attachment: [90mundefined[39m
+}

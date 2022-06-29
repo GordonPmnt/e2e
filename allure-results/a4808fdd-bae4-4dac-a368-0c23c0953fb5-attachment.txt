@@ -1,0 +1,17 @@
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: EventEntityInfo {
+    _entityId: [32m'308c2b20-5057-4380-9e26-3dc9db266444'[39m,
+    _entityType: [32m'EVENT'[39m,
+    _entityContent: [32m'Rubber Wyoming 1654862568894'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'61ad035e-6b8b-4a81-a1ad-6d21047dc6eb'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'Chicken Dinar Jersey primary Port 1654862570574'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  attachment: [90mundefined[39m
+}

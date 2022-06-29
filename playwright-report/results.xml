@@ -1,0 +1,152 @@
+<testsuites id="" name="" tests="6" failures="1" skipped="0" errors="0" time="101.782">
+<testsuite name="tests/moderation/partner/moderate-reported-comment.spec.ts" timestamp="1654866155459" hostname="" tests="6" failures="1" skipped="0" time="98.159" errors="0">
+<testcase name="Moderate a reported comment keep &quot;POST_COMMENT&quot; visible" classname="gherkin-utils/define-feature.util.ts:122:7 › Moderate a reported comment › keep &quot;POST_COMMENT&quot; visible" time="18.152">
+<system-out>
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+
+</system-out>
+</testcase>
+<testcase name="Moderate a reported comment keep &quot;POLL_COMMENT&quot; visible" classname="gherkin-utils/define-feature.util.ts:122:7 › Moderate a reported comment › keep &quot;POLL_COMMENT&quot; visible" time="16.933">
+<system-out>
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+
+</system-out>
+</testcase>
+<testcase name="Moderate a reported comment keep &quot;EVENT_COMMENT&quot; visible" classname="gherkin-utils/define-feature.util.ts:122:7 › Moderate a reported comment › keep &quot;EVENT_COMMENT&quot; visible" time="19.747">
+<system-out>
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+
+</system-out>
+</testcase>
+<testcase name="Moderate a reported comment hide &quot;POST_COMMENT&quot;" classname="gherkin-utils/define-feature.util.ts:122:7 › Moderate a reported comment › hide &quot;POST_COMMENT&quot;" time="17.079">
+<system-out>
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+
+</system-out>
+</testcase>
+<testcase name="Moderate a reported comment hide &quot;POLL_COMMENT&quot;" classname="gherkin-utils/define-feature.util.ts:122:7 › Moderate a reported comment › hide &quot;POLL_COMMENT&quot;" time="5.521">
+<failure message="define-feature.util.ts:122:7 hide &quot;POLL_COMMENT&quot;" type="FAILURE">
+  gherkin-utils/define-feature.util.ts:122:7 › Moderate a reported comment › hide "POLL_COMMENT" ===
+
+    page.goto: Target page, context or browser has been closed
+
+      148 |               }
+      149 |
+    > 150 |               await stepDefinition.stepDefinitionCallback(
+          |                                    ^
+      151 |                 {
+      152 |                   page,
+      153 |                 },
+
+        at login (/Users/gordonpreumont/workspace/aaqua-web-e2e-prod/src/step-definitions/login/login.spec.ts:14:19)
+        at Object.stepDefinitionCallback (/Users/gordonpreumont/workspace/aaqua-web-e2e-prod/src/tests/moderation/partner/moderate-reported-comment.spec.ts:50:13)
+        at /Users/gordonpreumont/workspace/aaqua-web-e2e-prod/src/gherkin-utils/define-feature.util.ts:150:36
+        at /Users/gordonpreumont/workspace/aaqua-web-e2e-prod/src/gherkin-utils/define-feature.util.ts:141:24
+        at /Users/gordonpreumont/workspace/aaqua-web-e2e-prod/src/gherkin-utils/define-feature.util.ts:158:42
+        at pEachSeries (/Users/gordonpreumont/workspace/aaqua-web-e2e-prod/src/gherkin-utils/define-feature.util.ts:12:31)
+        at /Users/gordonpreumont/workspace/aaqua-web-e2e-prod/src/gherkin-utils/define-feature.util.ts:123:9
+
+    attachment #1: trace (application/zip) ---------------------------------------------------------
+    test-results/tests-moderation-partner-moderate-reported-comment-Moderate-a-reported-comment-hide-POLL-COMMENT-/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/tests-moderation-partner-moderate-reported-comment-Moderate-a-reported-comment-hide-POLL-COMMENT-/trace.zip
+
+    ------------------------------------------------------------------------------------------------
+
+</failure>
+<system-out>
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+[cleanup] Test failed
+ModerationState {
+  _reportedEntityType: [32m'COMMENT'[39m,
+  _reportedReason: [32m'HARASSMENT_HATE'[39m,
+  mainContent: PollEntityInfo {
+    _entityId: [32m'08d59783-a679-4011-be49-8ba980a0692b'[39m,
+    _entityType: [32m'POLL'[39m,
+    _entityContent: [32m'Generic Chicken'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: CommentEntityInfo {
+    _entityId: [32m'2882432e-61d4-4630-9607-7608302e17eb'[39m,
+    _entityType: [32m'COMMENT'[39m,
+    _entityContent: [32m'deposit USB auxiliary Computer Engineer 1654866230569'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  attachment: [90mundefined[39m
+}
+
+</system-out>
+<system-err>
+
+Warning: attachment ../test-results/tests-moderation-partner-moderate-reported-comment-Moderate-a-reported-comment-hide-POLL-COMMENT-/trace.zip is missing
+</system-err>
+</testcase>
+<testcase name="Moderate a reported comment hide &quot;EVENT_COMMENT&quot;" classname="gherkin-utils/define-feature.util.ts:122:7 › Moderate a reported comment › hide &quot;EVENT_COMMENT&quot;" time="20.727">
+<system-out>
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+[getAuthToken] Trying to get token
+[closeSession] Trying to close session
+
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

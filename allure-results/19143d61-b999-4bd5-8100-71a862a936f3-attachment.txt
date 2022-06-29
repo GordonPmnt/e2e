@@ -1,0 +1,12 @@
+ModerationState {
+  _reportedEntityType: [90mundefined[39m,
+  _reportedReason: [32m''[39m,
+  mainContent: PostEntityInfo {
+    _entityId: [32m'212a43bd-ce2a-405b-81d0-a6c27636e7e3'[39m,
+    _entityType: [32m'POST'[39m,
+    _entityContent: [32m'calculate generation Administrator 1654682487215'[39m,
+    _author: [32m'MOD_MEMBER_1'[39m
+  },
+  comment: [90mundefined[39m,
+  attachment: [90mundefined[39m
+}

@@ -1,0 +1,5 @@
+mutation appealModerationJobMutation($input: AppealModerationJobInput!) {
+  appealModerationJob(input: $input) {
+    entityId
+  }
+}

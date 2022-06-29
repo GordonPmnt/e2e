@@ -1,0 +1,12 @@
+ModerationState {
+  _reportedEntityType: [90mundefined[39m,
+  _reportedReason: [32m''[39m,
+  mainContent: EventEntityInfo {
+    _entityId: [32m'10006167-5f88-4a72-a6d1-a792a71b5060'[39m,
+    _entityType: [32m'EVENT'[39m,
+    _entityContent: [32m'Test'[39m,
+    _author: [32m'MOD_ADMIN'[39m
+  },
+  comment: [90mundefined[39m,
+  attachment: [90mundefined[39m
+}
